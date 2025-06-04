@@ -49,6 +49,16 @@ public class ManagedExecutorMetaDataMerger {
             dest.setProperties(override.getProperties());
         else if (original != null && original.getProperties() != null)
             dest.setProperties(original.getProperties());
+
+        if (override != null && override.getQualifier() != null)
+            dest.setQualifier(override.getQualifier());
+        else if (original != null && original.getQualifier() != null)
+            dest.setQualifier(original.getQualifier());
+
+        if (override != null && override.getVirtual() != null)
+            dest.setVirtual(override.getVirtual());
+        else if (original != null && original.getVirtual() != null)
+            dest.setVirtual(original.getVirtual());
     }
 
 }

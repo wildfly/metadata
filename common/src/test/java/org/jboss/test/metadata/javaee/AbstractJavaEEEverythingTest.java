@@ -4,6 +4,7 @@
  */
 package org.jboss.test.metadata.javaee;
 
+import java.util.List;
 import java.util.Set;
 
 import org.jboss.annotation.javaee.Description;
@@ -965,6 +966,7 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
             final Set<String> propagated = metaData.getPropagated();
             final Set<String> unchanged = metaData.getUnchanged();
             final PropertiesMetaData properties = metaData.getProperties();
+            final List<String> qualifier = metaData.getQualifier();
 
             assertEquals(metaDataPrefix + "-name", name);
             if (count<3) {
@@ -988,12 +990,17 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
                 assertEquals(metaDataPrefix + "-unchanged", unchanged.iterator().next());
                 // properties
                 assertProperties(metaDataPrefix,2,properties);
+                if (version.ordinal() > JavaEEVersion.V10.ordinal()) {
+                    // qualifier
+                    assertQualifier(metaDataPrefix, 2, qualifier);
+                }
             } else {
                 assertNull(desc);
                 assertNull(cleared);
                 assertNull(propagated);
                 assertNull(unchanged);
                 assertNull(properties);
+                assertNull(qualifier);
             }
             ++count;
         }
@@ -1019,6 +1026,8 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
             final Integer hungTaskThreshold = metaData.getHungTaskThreshold();
             final Integer maxAsync = metaData.getMaxAsync();
             final PropertiesMetaData properties = metaData.getProperties();
+            final List<String> qualifier = metaData.getQualifier();
+            final Boolean virtual = metaData.getVirtual();
 
             assertEquals(metaDataPrefix + "-name", name);
             if (count<3) {
@@ -1039,12 +1048,20 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
                 assertEquals(count, maxAsync.intValue());
                 // properties
                 assertProperties(metaDataPrefix,2,properties);
+                if (version.ordinal() > JavaEEVersion.V10.ordinal()) {
+                    // qualifier
+                    assertQualifier(metaDataPrefix, 2, qualifier);
+                    // virtual
+                    assertVirtual(count, virtual);
+                }
             } else {
                 assertNull(desc);
                 assertNull(contextServiceRef);
                 assertNull(hungTaskThreshold);
                 assertNull(maxAsync);
                 assertNull(properties);
+                assertNull(qualifier);
+                assertNull(virtual);
             }
             ++count;
         }
@@ -1070,6 +1087,8 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
             final Integer hungTaskThreshold = metaData.getHungTaskThreshold();
             final Integer maxAsync = metaData.getMaxAsync();
             final PropertiesMetaData properties = metaData.getProperties();
+            final List<String> qualifier = metaData.getQualifier();
+            final Boolean virtual = metaData.getVirtual();
 
             assertEquals(metaDataPrefix + "-name", name);
             if (count<3) {
@@ -1090,12 +1109,20 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
                 assertEquals(count, maxAsync.intValue());
                 // properties
                 assertProperties(metaDataPrefix,2,properties);
+                if (version.ordinal() > JavaEEVersion.V10.ordinal()) {
+                    // qualifier
+                    assertQualifier(metaDataPrefix, 2, qualifier);
+                    // virtual
+                    assertVirtual(count, virtual);
+                }
             } else {
                 assertNull(desc);
                 assertNull(contextServiceRef);
                 assertNull(hungTaskThreshold);
                 assertNull(maxAsync);
                 assertNull(properties);
+                assertNull(qualifier);
+                assertNull(virtual);
             }
             ++count;
         }
@@ -1120,6 +1147,8 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
             final String contextServiceRef = metaData.getContextServiceRef();
             final int priority = metaData.getPriority();
             final PropertiesMetaData properties = metaData.getProperties();
+            final List<String> qualifier = metaData.getQualifier();
+            final Boolean virtual = metaData.getVirtual();
 
             assertEquals(metaDataPrefix + "-name", name);
             if (count<3) {
@@ -1136,11 +1165,19 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
                 assertEquals(count, priority);
                 // properties
                 assertProperties(metaDataPrefix,2,properties);
+                if (version.ordinal() > JavaEEVersion.V10.ordinal()) {
+                    // qualifier
+                    assertQualifier(metaDataPrefix, 2, qualifier);
+                    // virtual
+                    assertVirtual(count, virtual);
+                }
             } else {
                 assertNull(desc);
                 assertNull(contextServiceRef);
                 assertEquals(priority, Thread.NORM_PRIORITY);
                 assertNull(properties);
+                assertNull(qualifier);
+                assertNull(virtual);
             }
             ++count;
         }
@@ -1169,6 +1206,25 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
             assertEquals(prefix + "Property" + count + "Name", property.getName());
             assertEquals(prefix + "Property" + count + "Value", property.getValue());
             ++count;
+        }
+    }
+
+    protected void assertQualifier(String prefix, int size, List<String> qualifierMetaData) {
+        assertNotNull(qualifierMetaData);
+        assertEquals(size, qualifierMetaData.size());
+        int count = 1;
+        for (String qualifier : qualifierMetaData) {
+            assertEquals(prefix + "Qualifier" + count, qualifier);
+            ++count;
+        }
+    }
+
+    protected void assertVirtual(int count, Boolean virtual) {
+        assertNotNull(virtual);
+        if (count == 1) {
+            assertTrue(virtual);
+        } else {
+            assertFalse(virtual);
         }
     }
 

@@ -50,5 +50,10 @@ public class ContextServiceMetaDataMerger {
             dest.setProperties(override.getProperties());
         else if (original != null && original.getProperties() != null)
             dest.setProperties(original.getProperties());
+
+        if (override != null && override.getQualifier() != null)
+            dest.setQualifier(override.getQualifier());
+        else if (original != null && original.getQualifier() != null)
+            dest.setQualifier(original.getQualifier());
     }
 }

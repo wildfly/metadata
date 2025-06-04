@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The JBoss Metadata Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         version="6.1" id="web-app-everything" metadata-complete="true">
+
+    <module-name>foo</module-name>
+
+    <absolute-ordering>
+        <name>foo1</name>
+        <name>foo2</name>
+        <others/>
+        <name>foo3</name>
+    </absolute-ordering>
+
+    <!-- description group -->
+    <description>en-web-app-desc</description>
+    <description xml:lang="fr">fr-web-app-desc</description>
+    <description xml:lang="de">de-web-app-desc</description>
+    <display-name>en-web-app-disp</display-name>
+    <display-name xml:lang="fr">fr-web-app-disp</display-name>
+    <display-name xml:lang="de">de-web-app-disp</display-name>
+    <icon>
+        <small-icon>en-web-app-small-icon</small-icon>
+        <large-icon>en-web-app-large-icon</large-icon>
+    </icon>
+    <icon id="en-web-app-icon-id">
+        <small-icon>en-web-app-small-icon</small-icon>
+        <large-icon>en-web-app-large-icon</large-icon>
+    </icon>
+    <icon xml:lang="fr" id="fr-web-app-icon-id">
+        <small-icon>fr-web-app-small-icon</small-icon>
+        <large-icon>fr-web-app-large-icon</large-icon>
+    </icon>
+    <icon xml:lang="de" id="de-web-app-icon-id">
+        <small-icon>de-web-app-small-icon</small-icon>
+        <large-icon>de-web-app-large-icon</large-icon>
+    </icon>
+
+    <distributable/>
+
+    <context-param id="context-param0">
+        <description>context-param0-description</description>
+        <param-name>context-param0-name</param-name>
+        <param-value>context-param0-value</param-value>
+    </context-param>
+
+    <filter id="filter0">
+        <description>filter0-description</description>
+        <display-name>filter0-display-name</display-name>
+        <icon>
+            <small-icon>filter0-small-icon</small-icon>
+            <large-icon>filter0-large-icon</large-icon>
+        </icon>
+        <filter-name>filter0Name</filter-name>
+        <filter-class>filter0Class</filter-class>
+    </filter>
+    <filter id="filter1">
+        <description>filter1-description</description>
+        <display-name>filter1-display-name</display-name>
+        <icon>
+            <small-icon>filter1-small-icon</small-icon>
+            <large-icon>filter1-large-icon</large-icon>
+        </icon>
+        <filter-name>filter1Name</filter-name>
+        <filter-class>filter1Class</filter-class>
+        <async-supported>true</async-supported>
+    </filter>
+    <filter-mapping id="filter0-mapping">
+        <filter-name>filter0Name</filter-name>
+        <url-pattern>/filter0/*</url-pattern>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping id="filter1-mapping">
+        <filter-name>filter1Name</filter-name>
+        <servlet-name>servlet0</servlet-name>
+        <servlet-name>servlet1</servlet-name>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <listener id="listener0">
+        <description>listener0-description</description>
+        <display-name>listener0-dipslay-name</display-name>
+        <icon id="listener0-icon">
+            <small-icon>listener0-small-icon</small-icon>
+            <large-icon>listener0-icon</large-icon>
+        </icon>
+        <listener-class>
+            listener0.class
+        </listener-class>
+    </listener>
+
+    <servlet id="servlet0">
+        <servlet-name>servlet0-name</servlet-name>
+        <servlet-class>
+            servlet0.class
+        </servlet-class>
+        <init-param id="servlet0-init-param0">
+            <param-name>init-param0-name</param-name>
+            <param-value>init-param0-value</param-value>
+        </init-param>
+        <init-param id="servlet0-init-param1">
+            <param-name>init-param1-name</param-name>
+            <param-value>init-param1-value</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <run-as>
+            <role-name>run-as-role0</role-name>
+        </run-as>
+        <security-role-ref>
+            <role-name>servlet0-role-ref</role-name>
+            <role-link>role0</role-link>
+        </security-role-ref>
+    </servlet>
+    <servlet id="servlet1">
+        <servlet-name>servlet1-name</servlet-name>
+        <servlet-class>servlet1.class</servlet-class>
+        <init-param id="servlet1-init-param0">
+            <param-name>init-param0-name</param-name>
+            <param-value>init-param0-value</param-value>
+        </init-param>
+        <init-param id="servlet1-init-param1">
+            <param-name>init-param1-name</param-name>
+            <param-value>init-param1-value</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <enabled>false</enabled>
+        <async-supported>true</async-supported>
+        <run-as>
+            <role-name>run-as-role1</role-name>
+        </run-as>
+        <security-role-ref>
+            <role-name>servlet1-role-ref</role-name>
+            <role-link>role1</role-link>
+        </security-role-ref>
+    </servlet>
+    <servlet-mapping id="servlet0-mapping0">
+        <servlet-name>servlet0-name</servlet-name>
+        <url-pattern>/servlet0/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="servlet0-mapping1">
+        <servlet-name>servlet0-name</servlet-name>
+        <url-pattern>/servlet0/*.s</url-pattern>
+        <url-pattern>/servlet0/*.sx</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="servlet1-mapping2">
+        <servlet-name>servlet1-name</servlet-name>
+        <url-pattern>/servlet1/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="servlet1-mapping3">
+        <servlet-name>servlet1-name</servlet-name>
+        <url-pattern>/servlet1/*.s</url-pattern>
+        <url-pattern>/servlet1/*.sx</url-pattern>
+    </servlet-mapping>
+
+    <session-config id="session-config0">
+        <session-timeout>-1</session-timeout>
+        <cookie-config id="cookie-config0">
+            <name>session</name>
+            <domain>.jboss.org</domain>
+            <path>/</path>
+            <comment>Test</comment>
+            <http-only>true</http-only>
+            <secure>true</secure>
+            <max-age>10</max-age>
+            <attribute id="attribute0">
+                <attribute-name>SameSite</attribute-name>
+                <attribute-value>None</attribute-value>
+            </attribute>
+            <attribute id="attribute1">
+                <attribute-name>foo</attribute-name>
+                <attribute-value>bar</attribute-value>
+            </attribute>
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <mime-mapping id="mime-mapping0">
+        <extension>ext0</extension>
+        <mime-type>x/type0</mime-type>
+    </mime-mapping>
+    <mime-mapping id="mime-mapping1">
+        <extension>ext1</extension>
+        <mime-type>x/type1</mime-type>
+    </mime-mapping>
+
+    <welcome-file-list id="welcome-file-list0">
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>*.welcome</welcome-file>
+    </welcome-file-list>
+
+    <error-page id="error-page0">
+        <error-code>404</error-code>
+        <location>/error-page0</location>
+    </error-page>
+    <error-page id="error-page1">
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error-page1</location>
+    </error-page>
+
+    <jsp-config id="jsp-config0">
+        <taglib>
+            <taglib-uri>jsp-config0</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/jsp-config0.tld</taglib-location>
+        </taglib>
+        <jsp-property-group>
+            <description>Property group for common configuration for all the JSP's</description>
+            <url-pattern>*.jsp</url-pattern>
+            <url-pattern>*.jspx</url-pattern>
+            <el-ignored>false</el-ignored>
+            <error-on-el-not-found>false</error-on-el-not-found>
+            <page-encoding>ISO-8859-1</page-encoding>
+            <scripting-invalid>false</scripting-invalid>
+            <is-xml>false</is-xml>
+            <include-prelude>/common-jsps/prelude.jsp</include-prelude>
+            <include-coda>/common-jsps/coda.jsp</include-coda>
+            <deferred-syntax-allowed-as-literal>true</deferred-syntax-allowed-as-literal>
+            <trim-directive-whitespaces>true</trim-directive-whitespaces>
+            <default-content-type>text/plain</default-content-type>
+            <buffer>1024</buffer>
+            <error-on-undeclared-namespace>true</error-on-undeclared-namespace>
+        </jsp-property-group>
+    </jsp-config>
+
+    <security-constraint id="security-constraint0">
+        <display-name>security-constraint0-display-name</display-name>
+        <web-resource-collection id="web-resource-collection0">
+            <web-resource-name>web-resource0-name</web-resource-name>
+            <url-pattern>/resource0/*</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection id="web-resource-collection1">
+            <web-resource-name>web-resource1-name</web-resource-name>
+            <url-pattern>/resource1/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint id="auth-constraint0">
+            <description></description>
+            <role-name>role0</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    <security-constraint id="security-constraint-excluded">
+        <display-name>security-constraint-excluded-name</display-name>
+        <web-resource-collection id="web-resource-excluded">
+            <web-resource-name>web-resource-excluded-name</web-resource-name>
+            <url-pattern>/resource-excluded/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint />
+    </security-constraint>
+    <security-constraint id="security-constraint-unchecked">
+        <display-name>security-constraint-unchecked-name</display-name>
+        <web-resource-collection id="web-resource-collection-unchecked">
+            <web-resource-name>web-resource-unchecked-name</web-resource-name>
+            <url-pattern>/resource-unchecked/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+
+    <login-config id="login-config-FORM">
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login-error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <security-role id="security-role0">
+        <role-name>role0</role-name>
+    </security-role>
+    <security-role id="security-role1">
+        <role-name>role1</role-name>
+    </security-role>
+
+    <env-entry id="webAppEnvEntry1-id">
+        <description>en-webAppEnvEntry1-desc</description>
+        <description xml:lang="fr">fr-webAppEnvEntry1-desc
+        </description>
+        <description xml:lang="de">de-webAppEnvEntry1-desc
+        </description>
+        <env-entry-name>webAppEnvEntry1Name</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>webAppEnvEntry1Value</env-entry-value>
+        <mapped-name>webAppEnvEntry1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppEnvEntry1Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppEnvEntry1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppEnvEntry1Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppEnvEntry1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </env-entry>
+    <env-entry id="webAppEnvEntry2-id">
+        <description>en-webAppEnvEntry2-desc</description>
+        <description xml:lang="fr">fr-webAppEnvEntry2-desc
+        </description>
+        <description xml:lang="de">de-webAppEnvEntry2-desc
+        </description>
+        <env-entry-name>webAppEnvEntry2Name</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>webAppEnvEntry2Value</env-entry-value>
+        <mapped-name>webAppEnvEntry2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppEnvEntry2Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppEnvEntry2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppEnvEntry2Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppEnvEntry2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </env-entry>
+    <ejb-ref id="webAppEjbRef1-id">
+        <description>en-webAppEjbRef1-desc</description>
+        <description xml:lang="fr">fr-webAppEjbRef1-desc</description>
+        <description xml:lang="de">de-webAppEjbRef1-desc</description>
+        <ejb-ref-name>webAppEjbRef1Name</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>webAppEjbRef1Home</home>
+        <remote>webAppEjbRef1Remote</remote>
+        <ejb-link>webAppEjbRef1EjbLink</ejb-link>
+        <mapped-name>webAppEjbRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppEjbRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppEjbRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppEjbRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppEjbRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </ejb-ref>
+    <ejb-ref id="webAppEjbRef2-id">
+        <description>en-webAppEjbRef2-desc</description>
+        <description xml:lang="fr">fr-webAppEjbRef2-desc</description>
+        <description xml:lang="de">de-webAppEjbRef2-desc</description>
+        <ejb-ref-name>webAppEjbRef2Name</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <home>webAppEjbRef2Home</home>
+        <remote>webAppEjbRef2Remote</remote>
+        <ejb-link>webAppEjbRef2EjbLink</ejb-link>
+        <mapped-name>webAppEjbRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppEjbRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppEjbRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppEjbRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppEjbRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </ejb-ref>
+    <ejb-local-ref id="webAppEjbLocalRef1-id">
+        <description>en-webAppEjbLocalRef1-desc</description>
+        <description xml:lang="fr">fr-webAppEjbLocalRef1-desc
+        </description>
+        <description xml:lang="de">de-webAppEjbLocalRef1-desc
+        </description>
+        <ejb-ref-name>webAppEjbLocalRef1Name</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local-home>webAppEjbLocalRef1LocalHome</local-home>
+        <local>webAppEjbLocalRef1Local</local>
+        <ejb-link>webAppEjbLocalRef1EjbLink</ejb-link>
+        <mapped-name>webAppEjbLocalRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppEjbLocalRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppEjbLocalRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppEjbLocalRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppEjbLocalRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </ejb-local-ref>
+    <ejb-local-ref id="webAppEjbLocalRef2-id">
+        <description>en-webAppEjbLocalRef2-desc</description>
+        <description xml:lang="fr">fr-webAppEjbLocalRef2-desc
+        </description>
+        <description xml:lang="de">de-webAppEjbLocalRef2-desc
+        </description>
+        <ejb-ref-name>webAppEjbLocalRef2Name</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>webAppEjbLocalRef2LocalHome</local-home>
+        <local>webAppEjbLocalRef2Local</local>
+        <ejb-link>webAppEjbLocalRef2EjbLink</ejb-link>
+        <mapped-name>webAppEjbLocalRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppEjbLocalRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppEjbLocalRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppEjbLocalRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppEjbLocalRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </ejb-local-ref>
+
+    <!-- service ref -->
+    <!-- TODO: full service-ref contents -->
+    <service-ref id="webAppServiceRef1-id">
+        <description>en-webAppServiceRef1-desc</description>
+        <description xml:lang="fr">fr-webAppServiceRef1-desc
+        </description>
+        <description xml:lang="de">de-webAppServiceRef1-desc
+        </description>
+        <service-ref-name>webAppServiceRef1Name</service-ref-name>
+        <service-interface>webAppServiceRef1Iface</service-interface>
+    </service-ref>
+    <service-ref id="webAppServiceRef2-id">
+        <description>en-webAppServiceRef2-desc</description>
+        <description xml:lang="fr">fr-webAppServiceRef2-desc
+        </description>
+        <description xml:lang="de">de-webAppServiceRef2-desc
+        </description>
+        <service-ref-name>webAppServiceRef2Name</service-ref-name>
+        <service-interface>webAppServiceRef2Iface</service-interface>
+    </service-ref>
+
+    <resource-ref id="webAppResourceRef1-id">
+        <description>en-webAppResourceRef1-desc</description>
+        <description xml:lang="fr">fr-webAppResourceRef1-desc
+        </description>
+        <description xml:lang="de">de-webAppResourceRef1-desc
+        </description>
+        <res-ref-name>webAppResourceRef1Name</res-ref-name>
+        <res-type>webAppResourceRef1Type</res-type>
+        <res-auth>Application</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+        <mapped-name>webAppResourceRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppResourceRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppResourceRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppResourceRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppResourceRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </resource-ref>
+    <resource-ref id="webAppResourceRef2-id">
+        <description>en-webAppResourceRef2-desc</description>
+        <description xml:lang="fr">fr-webAppResourceRef2-desc
+        </description>
+        <description xml:lang="de">de-webAppResourceRef2-desc
+        </description>
+        <res-ref-name>webAppResourceRef2Name</res-ref-name>
+        <res-type>webAppResourceRef2Type</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Unshareable</res-sharing-scope>
+        <mapped-name>webAppResourceRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppResourceRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppResourceRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppResourceRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppResourceRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </resource-ref>
+    <resource-env-ref id="webAppResourceEnvRef1-id">
+        <description>en-webAppResourceEnvRef1-desc</description>
+        <description xml:lang="fr">fr-webAppResourceEnvRef1-desc
+        </description>
+        <description xml:lang="de">de-webAppResourceEnvRef1-desc
+        </description>
+        <resource-env-ref-name>webAppResourceEnvRef1Name
+        </resource-env-ref-name>
+        <resource-env-ref-type>webAppResourceEnvRef1Type
+        </resource-env-ref-type>
+        <mapped-name>webAppResourceEnvRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppResourceEnvRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppResourceEnvRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppResourceEnvRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppResourceEnvRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </resource-env-ref>
+    <resource-env-ref id="webAppResourceEnvRef2-id">
+        <description>en-webAppResourceEnvRef2-desc</description>
+        <description xml:lang="fr">fr-webAppResourceEnvRef2-desc
+        </description>
+        <description xml:lang="de">de-webAppResourceEnvRef2-desc
+        </description>
+        <resource-env-ref-name>webAppResourceEnvRef2Name
+        </resource-env-ref-name>
+        <resource-env-ref-type>webAppResourceEnvRef2Type
+        </resource-env-ref-type>
+        <mapped-name>webAppResourceEnvRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppResourceEnvRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppResourceEnvRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppResourceEnvRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppResourceEnvRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </resource-env-ref>
+    <message-destination-ref id="webAppMessageDestinationRef1-id">
+        <description>en-webAppMessageDestinationRef1-desc</description>
+        <description xml:lang="fr">fr-webAppMessageDestinationRef1-desc
+        </description>
+        <description xml:lang="de">de-webAppMessageDestinationRef1-desc
+        </description>
+        <message-destination-ref-name>webAppMessageDestinationRef1Name
+        </message-destination-ref-name>
+        <message-destination-type>webAppMessageDestinationRef1Type
+        </message-destination-type>
+        <message-destination-usage>Consumes</message-destination-usage>
+        <message-destination-link>webAppMessageDestinationRef1Link
+        </message-destination-link>
+        <mapped-name>webAppMessageDestinationRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppMessageDestinationRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppMessageDestinationRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppMessageDestinationRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppMessageDestinationRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </message-destination-ref>
+    <message-destination-ref id="webAppMessageDestinationRef2-id">
+        <description>en-webAppMessageDestinationRef2-desc</description>
+        <description xml:lang="fr">fr-webAppMessageDestinationRef2-desc
+        </description>
+        <description xml:lang="de">de-webAppMessageDestinationRef2-desc
+        </description>
+        <message-destination-ref-name>webAppMessageDestinationRef2Name
+        </message-destination-ref-name>
+        <message-destination-type>webAppMessageDestinationRef2Type
+        </message-destination-type>
+        <message-destination-usage>Produces</message-destination-usage>
+        <message-destination-link>webAppMessageDestinationRef2Link
+        </message-destination-link>
+        <mapped-name>webAppMessageDestinationRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppMessageDestinationRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppMessageDestinationRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppMessageDestinationRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppMessageDestinationRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </message-destination-ref>
+    <message-destination-ref id="webAppMessageDestinationRef3-id">
+        <description>en-webAppMessageDestinationRef3-desc</description>
+        <description xml:lang="fr">fr-webAppMessageDestinationRef3-desc
+        </description>
+        <description xml:lang="de">de-webAppMessageDestinationRef3-desc
+        </description>
+        <message-destination-ref-name>webAppMessageDestinationRef3Name
+        </message-destination-ref-name>
+        <message-destination-type>webAppMessageDestinationRef3Type
+        </message-destination-type>
+        <message-destination-usage>ConsumesProduces
+        </message-destination-usage>
+        <message-destination-link>webAppMessageDestinationRef3Link
+        </message-destination-link>
+        <mapped-name>webAppMessageDestinationRef3MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppMessageDestinationRef3Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppMessageDestinationRef3Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppMessageDestinationRef3Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppMessageDestinationRef3Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </message-destination-ref>
+    <persistence-context-ref id="webAppPersistenceContextRef1-id">
+        <description>en-webAppPersistenceContextRef1-desc</description>
+        <description xml:lang="fr">fr-webAppPersistenceContextRef1-desc
+        </description>
+        <description xml:lang="de">de-webAppPersistenceContextRef1-desc
+        </description>
+        <persistence-context-ref-name>webAppPersistenceContextRef1Name
+        </persistence-context-ref-name>
+        <persistence-unit-name>webAppPersistenceContextRef1Unit
+        </persistence-unit-name>
+        <persistence-context-type>Transaction</persistence-context-type>
+        <persistence-property id="webAppPersistenceContextRef1Property1-id">
+            <name>webAppPersistenceContextRef1Property1Name</name>
+            <value>webAppPersistenceContextRef1Property1Value</value>
+        </persistence-property>
+        <persistence-property id="webAppPersistenceContextRef1Property2-id">
+            <name>webAppPersistenceContextRef1Property2Name</name>
+            <value>webAppPersistenceContextRef1Property2Value</value>
+        </persistence-property>
+        <mapped-name>webAppPersistenceContextRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppPersistenceContextRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppPersistenceContextRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppPersistenceContextRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppPersistenceContextRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </persistence-context-ref>
+    <persistence-context-ref id="webAppPersistenceContextRef2-id">
+        <description>en-webAppPersistenceContextRef2-desc</description>
+        <description xml:lang="fr">fr-webAppPersistenceContextRef2-desc
+        </description>
+        <description xml:lang="de">de-webAppPersistenceContextRef2-desc
+        </description>
+        <persistence-context-ref-name>webAppPersistenceContextRef2Name
+        </persistence-context-ref-name>
+        <persistence-unit-name>webAppPersistenceContextRef2Unit
+        </persistence-unit-name>
+        <persistence-context-type>Extended</persistence-context-type>
+        <persistence-context-synchronization>Unsynchronized
+        </persistence-context-synchronization>
+        <persistence-property id="webAppPersistenceContextRef2Property1-id">
+            <name>webAppPersistenceContextRef2Property1Name</name>
+            <value>webAppPersistenceContextRef2Property1Value</value>
+        </persistence-property>
+        <persistence-property id="webAppPersistenceContextRef2Property2-id">
+            <name>webAppPersistenceContextRef2Property2Name</name>
+            <value>webAppPersistenceContextRef2Property2Value</value>
+        </persistence-property>
+        <mapped-name>webAppPersistenceContextRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppPersistenceContextRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppPersistenceContextRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppPersistenceContextRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppPersistenceContextRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </persistence-context-ref>
+    <persistence-unit-ref id="webAppPersistenceUnitRef1-id">
+        <description>en-webAppPersistenceUnitRef1-desc</description>
+        <description xml:lang="fr">fr-webAppPersistenceUnitRef1-desc
+        </description>
+        <description xml:lang="de">de-webAppPersistenceUnitRef1-desc
+        </description>
+        <persistence-unit-ref-name>webAppPersistenceUnitRef1Name
+        </persistence-unit-ref-name>
+        <persistence-unit-name>webAppPersistenceUnitRef1Unit
+        </persistence-unit-name>
+        <mapped-name>webAppPersistenceUnitRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppPersistenceUnitRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppPersistenceUnitRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppPersistenceUnitRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppPersistenceUnitRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </persistence-unit-ref>
+    <persistence-unit-ref id="webAppPersistenceUnitRef2-id">
+        <description>en-webAppPersistenceUnitRef2-desc</description>
+        <description xml:lang="fr">fr-webAppPersistenceUnitRef2-desc
+        </description>
+        <description xml:lang="de">de-webAppPersistenceUnitRef2-desc
+        </description>
+        <persistence-unit-ref-name>webAppPersistenceUnitRef2Name
+        </persistence-unit-ref-name>
+        <persistence-unit-name>webAppPersistenceUnitRef2Unit
+        </persistence-unit-name>
+        <mapped-name>webAppPersistenceUnitRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>webAppPersistenceUnitRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>webAppPersistenceUnitRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>webAppPersistenceUnitRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>webAppPersistenceUnitRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </persistence-unit-ref>
+    <post-construct>
+        <lifecycle-callback-class>webAppPostConstruct1Class
+        </lifecycle-callback-class>
+        <lifecycle-callback-method>webAppPostConstruct1Method
+        </lifecycle-callback-method>
+    </post-construct>
+    <post-construct>
+        <lifecycle-callback-class>webAppPostConstruct2Class
+        </lifecycle-callback-class>
+        <lifecycle-callback-method>webAppPostConstruct2Method
+        </lifecycle-callback-method>
+    </post-construct>
+    <pre-destroy>
+        <lifecycle-callback-class>webAppPreDestroy1Class
+        </lifecycle-callback-class>
+        <lifecycle-callback-method>webAppPreDestroy1Method
+        </lifecycle-callback-method>
+    </pre-destroy>
+    <pre-destroy>
+        <lifecycle-callback-class>webAppPreDestroy2Class
+        </lifecycle-callback-class>
+        <lifecycle-callback-method>webAppPreDestroy2Method
+        </lifecycle-callback-method>
+    </pre-destroy>
+    <!-- javaee:6:data-source -->
+    <data-source>
+        <description>en-webAppDataSource1-desc</description>
+        <name>webAppDataSource1Name</name>
+        <class-name>webAppDataSource1ClassName</class-name>
+        <server-name>webAppDataSource1ServerName</server-name>
+        <port-number>1</port-number>
+        <database-name>webAppDataSource1DatabaseName</database-name>
+        <url>jdbc:webAppDataSource1:url</url>
+        <user>webAppDataSource1User</user>
+        <password>webAppDataSource1Password</password>
+        <property id="webAppDataSource1Property1-id">
+            <name>webAppDataSource1Property1Name</name>
+            <value>webAppDataSource1Property1Value</value>
+        </property>
+        <property id="webAppDataSource1Property2-id">
+            <name>webAppDataSource1Property2Name</name>
+            <value>webAppDataSource1Property2Value</value>
+        </property>
+        <login-timeout>1</login-timeout>
+        <transactional>false</transactional>
+        <isolation-level>TRANSACTION_READ_UNCOMMITTED</isolation-level>
+        <initial-pool-size>1</initial-pool-size>
+        <max-pool-size>1</max-pool-size>
+        <min-pool-size>1</min-pool-size>
+        <max-idle-time>1</max-idle-time>
+        <max-statements>1</max-statements>
+    </data-source>
+    <data-source>
+        <description>en-webAppDataSource2-desc</description>
+        <name>webAppDataSource2Name</name>
+        <class-name>webAppDataSource2ClassName</class-name>
+        <server-name>webAppDataSource2ServerName</server-name>
+        <port-number>2</port-number>
+        <database-name>webAppDataSource2DatabaseName</database-name>
+        <url>jdbc:webAppDataSource2:url</url>
+        <user>webAppDataSource2User</user>
+        <password>webAppDataSource2Password</password>
+        <property id="webAppDataSource2Property1-id">
+            <name>webAppDataSource2Property1Name</name>
+            <value>webAppDataSource2Property1Value</value>
+        </property>
+        <property id="webAppDataSource2Property2-id">
+            <name>webAppDataSource2Property2Name</name>
+            <value>webAppDataSource2Property2Value</value>
+        </property>
+        <login-timeout>2</login-timeout>
+        <transactional>true</transactional>
+        <isolation-level>TRANSACTION_READ_COMMITTED</isolation-level>
+        <initial-pool-size>2</initial-pool-size>
+        <max-pool-size>2</max-pool-size>
+        <min-pool-size>2</min-pool-size>
+        <max-idle-time>2</max-idle-time>
+        <max-statements>2</max-statements>
+    </data-source>
+    <!-- javaee:7:jms-connection-factory -->
+    <jms-connection-factory>
+        <description>webAppJmsConnectionFactory1Desc</description>
+        <name>webAppJmsConnectionFactory1Name</name>
+        <interface-name>javax.jms.QueueConnectionFactory</interface-name>
+        <class-name>webAppJmsConnectionFactory1ClassName</class-name>
+        <resource-adapter>webAppJmsConnectionFactory1ResourceAdapter
+        </resource-adapter>
+        <user>webAppJmsConnectionFactory1User</user>
+        <password>webAppJmsConnectionFactory1Password</password>
+        <client-id>webAppJmsConnectionFactory1ClientId</client-id>
+        <property id="webAppJmsConnectionFactory1Property1-id">
+            <name>webAppJmsConnectionFactory1Property1Name</name>
+            <value>webAppJmsConnectionFactory1Property1Value</value>
+        </property>
+        <property id="webAppJmsConnectionFactory1Property2-id">
+            <name>webAppJmsConnectionFactory1Property2Name</name>
+            <value>webAppJmsConnectionFactory1Property2Value</value>
+        </property>
+        <transactional>true</transactional>
+        <max-pool-size>1</max-pool-size>
+        <min-pool-size>1</min-pool-size>
+    </jms-connection-factory>
+    <jms-connection-factory>
+        <description>webAppJmsConnectionFactory2Desc</description>
+        <name>webAppJmsConnectionFactory2Name</name>
+        <interface-name>javax.jms.TopicConnectionFactory</interface-name>
+        <class-name>webAppJmsConnectionFactory2ClassName</class-name>
+        <resource-adapter>webAppJmsConnectionFactory2ResourceAdapter
+        </resource-adapter>
+        <user>webAppJmsConnectionFactory2User</user>
+        <password>webAppJmsConnectionFactory2Password</password>
+        <client-id>webAppJmsConnectionFactory2ClientId</client-id>
+        <property id="webAppJmsConnectionFactory2Property1-id">
+            <name>webAppJmsConnectionFactory2Property1Name</name>
+            <value>webAppJmsConnectionFactory2Property1Value</value>
+        </property>
+        <property id="webAppJmsConnectionFactory2Property2-id">
+            <name>webAppJmsConnectionFactory2Property2Name</name>
+            <value>webAppJmsConnectionFactory2Property2Value</value>
+        </property>
+        <transactional>false</transactional>
+        <max-pool-size>2</max-pool-size>
+        <min-pool-size>2</min-pool-size>
+    </jms-connection-factory>
+    <jms-connection-factory>
+        <name>webAppJmsConnectionFactory3Name</name>
+    </jms-connection-factory>
+    <!-- javaee:7:jms-destination -->
+    <jms-destination>
+        <description>webAppJmsDestination1Desc</description>
+        <name>webAppJmsDestination1Name</name>
+        <interface-name>javax.jms.Queue</interface-name>
+        <class-name>webAppJmsDestination1ClassName</class-name>
+        <resource-adapter>webAppJmsDestination1ResourceAdapter
+        </resource-adapter>
+        <destination-name>webAppJmsDestination1DestinationName
+        </destination-name>
+        <property id="webAppJmsDestination1Property1-id">
+            <name>webAppJmsDestination1Property1Name</name>
+            <value>webAppJmsDestination1Property1Value</value>
+        </property>
+        <property id="webAppJmsDestination1Property2-id">
+            <name>webAppJmsDestination1Property2Name</name>
+            <value>webAppJmsDestination1Property2Value</value>
+        </property>
+    </jms-destination>
+    <jms-destination>
+        <description>webAppJmsDestination2Desc</description>
+        <name>webAppJmsDestination2Name</name>
+        <interface-name>javax.jms.Queue</interface-name>
+        <class-name>webAppJmsDestination2ClassName</class-name>
+        <resource-adapter>webAppJmsDestination2ResourceAdapter
+        </resource-adapter>
+        <destination-name>webAppJmsDestination2DestinationName
+        </destination-name>
+        <property id="webAppJmsDestination2Property1-id">
+            <name>webAppJmsDestination2Property1Name</name>
+            <value>webAppJmsDestination2Property1Value</value>
+        </property>
+        <property id="webAppJmsDestination2Property2-id">
+            <name>webAppJmsDestination2Property2Name</name>
+            <value>webAppJmsDestination2Property2Value</value>
+        </property>
+    </jms-destination>
+    <jms-destination>
+        <name>webAppJmsDestination3Name</name>
+        <interface-name>javax.jms.Topic</interface-name>
+    </jms-destination>
+    <!-- javaee:7:mail-session -->
+    <mail-session>
+        <description>webAppMailSession1Desc</description>
+        <name>webAppMailSession1Name</name>
+        <store-protocol>webAppMailSession1StoreProtocol</store-protocol>
+        <store-protocol-class>webAppMailSession1StoreProtocolClass
+        </store-protocol-class>
+        <transport-protocol>webAppMailSession1TransportProtocol
+        </transport-protocol>
+        <transport-protocol-class>webAppMailSession1TransportProtocolClass
+        </transport-protocol-class>
+        <host>webAppMailSession1Host</host>
+        <user>webAppMailSession1User</user>
+        <password>webAppMailSession1Password</password>
+        <from>webAppMailSession1From</from>
+        <property id="webAppMailSession1Property1-id">
+            <name>webAppMailSession1Property1Name</name>
+            <value>webAppMailSession1Property1Value</value>
+        </property>
+        <property id="webAppMailSession1Property2-id">
+            <name>webAppMailSession1Property2Name</name>
+            <value>webAppMailSession1Property2Value</value>
+        </property>
+    </mail-session>
+    <mail-session>
+        <description>webAppMailSession2Desc</description>
+        <name>webAppMailSession2Name</name>
+        <store-protocol>webAppMailSession2StoreProtocol</store-protocol>
+        <store-protocol-class>webAppMailSession2StoreProtocolClass
+        </store-protocol-class>
+        <transport-protocol>webAppMailSession2TransportProtocol
+        </transport-protocol>
+        <transport-protocol-class>webAppMailSession2TransportProtocolClass
+        </transport-protocol-class>
+        <host>webAppMailSession2Host</host>
+        <user>webAppMailSession2User</user>
+        <password>webAppMailSession2Password</password>
+        <from>webAppMailSession2From</from>
+        <property id="webAppMailSession2Property1-id">
+            <name>webAppMailSession2Property1Name</name>
+            <value>webAppMailSession2Property1Value</value>
+        </property>
+        <property id="webAppMailSession2Property2-id">
+            <name>webAppMailSession2Property2Name</name>
+            <value>webAppMailSession2Property2Value</value>
+        </property>
+    </mail-session>
+    <mail-session>
+        <name>webAppMailSession3Name</name>
+    </mail-session>
+    <!-- javaee:7:connection-factory -->
+    <connection-factory>
+        <description>webAppConnectionFactory1Desc</description>
+        <name>webAppConnectionFactory1Name</name>
+        <interface-name>webAppConnectionFactory1InterfaceName</interface-name>
+        <resource-adapter>webAppConnectionFactory1ResourceAdapter
+        </resource-adapter>
+        <max-pool-size>1</max-pool-size>
+        <min-pool-size>1</min-pool-size>
+        <transaction-support>NoTransaction</transaction-support>
+        <property id="webAppConnectionFactory1Property1-id">
+            <name>webAppConnectionFactory1Property1Name</name>
+            <value>webAppConnectionFactory1Property1Value</value>
+        </property>
+        <property id="webAppConnectionFactory1Property2-id">
+            <name>webAppConnectionFactory1Property2Name</name>
+            <value>webAppConnectionFactory1Property2Value</value>
+        </property>
+    </connection-factory>
+    <connection-factory>
+        <description>webAppConnectionFactory2Desc</description>
+        <name>webAppConnectionFactory2Name</name>
+        <interface-name>webAppConnectionFactory2InterfaceName</interface-name>
+        <resource-adapter>webAppConnectionFactory2ResourceAdapter
+        </resource-adapter>
+        <max-pool-size>2</max-pool-size>
+        <min-pool-size>2</min-pool-size>
+        <transaction-support>LocalTransaction</transaction-support>
+        <property id="webAppConnectionFactory2Property1-id">
+            <name>webAppConnectionFactory2Property1Name</name>
+            <value>webAppConnectionFactory2Property1Value</value>
+        </property>
+        <property id="webAppConnectionFactory2Property2-id">
+            <name>webAppConnectionFactory2Property2Name</name>
+            <value>webAppConnectionFactory2Property2Value</value>
+        </property>
+    </connection-factory>
+    <connection-factory>
+        <description>webAppConnectionFactory3Desc</description>
+        <name>webAppConnectionFactory3Name</name>
+        <interface-name>webAppConnectionFactory3InterfaceName</interface-name>
+        <resource-adapter>webAppConnectionFactory3ResourceAdapter
+        </resource-adapter>
+        <max-pool-size>3</max-pool-size>
+        <min-pool-size>3</min-pool-size>
+        <transaction-support>XATransaction</transaction-support>
+        <property id="webAppConnectionFactory3Property1-id">
+            <name>webAppConnectionFactory3Property1Name</name>
+            <value>webAppConnectionFactory3Property1Value</value>
+        </property>
+        <property id="webAppConnectionFactory3Property2-id">
+            <name>webAppConnectionFactory3Property2Name</name>
+            <value>webAppConnectionFactory3Property2Value</value>
+        </property>
+    </connection-factory>
+    <connection-factory>
+        <name>webAppConnectionFactory4Name</name>
+        <interface-name>webAppConnectionFactory4InterfaceName</interface-name>
+        <resource-adapter>webAppConnectionFactory4ResourceAdapter
+        </resource-adapter>
+    </connection-factory>
+    <!-- javaee:7:administered-object -->
+    <administered-object>
+        <description>webAppAdministeredObject1Desc</description>
+        <name>webAppAdministeredObject1Name</name>
+        <interface-name>webAppAdministeredObject1InterfaceName
+        </interface-name>
+        <class-name>webAppAdministeredObject1ClassName</class-name>
+        <resource-adapter>webAppAdministeredObject1ResourceAdapter
+        </resource-adapter>
+        <property id="webAppAdministeredObject1Property1-id">
+            <name>webAppAdministeredObject1Property1Name</name>
+            <value>webAppAdministeredObject1Property1Value</value>
+        </property>
+        <property id="webAppAdministeredObject1Property2-id">
+            <name>webAppAdministeredObject1Property2Name</name>
+            <value>webAppAdministeredObject1Property2Value</value>
+        </property>
+    </administered-object>
+    <administered-object>
+        <description>webAppAdministeredObject2Desc</description>
+        <name>webAppAdministeredObject2Name</name>
+        <interface-name>webAppAdministeredObject2InterfaceName
+        </interface-name>
+        <class-name>webAppAdministeredObject2ClassName</class-name>
+        <resource-adapter>webAppAdministeredObject2ResourceAdapter
+        </resource-adapter>
+        <property id="webAppAdministeredObject2Property1-id">
+            <name>webAppAdministeredObject2Property1Name</name>
+            <value>webAppAdministeredObject2Property1Value</value>
+        </property>
+        <property id="webAppAdministeredObject2Property2-id">
+            <name>webAppAdministeredObject2Property2Name</name>
+            <value>webAppAdministeredObject2Property2Value</value>
+        </property>
+    </administered-object>
+    <administered-object>
+        <name>webAppAdministeredObject3Name</name>
+        <class-name>webAppAdministeredObject3ClassName</class-name>
+        <resource-adapter>webAppAdministeredObject3ResourceAdapter
+        </resource-adapter>
+    </administered-object>
+
+    <!-- message destination -->
+    <message-destination id="messageDestination1-id">
+        <description>en-messageDestination1-desc</description>
+        <description xml:lang="fr">fr-messageDestination1-desc
+        </description>
+        <description xml:lang="de">de-messageDestination1-desc
+        </description>
+        <display-name>en-messageDestination1-disp</display-name>
+        <display-name xml:lang="fr">fr-messageDestination1-disp
+        </display-name>
+        <display-name xml:lang="de">de-messageDestination1-disp
+        </display-name>
+        <icon id="en-messageDestination1-icon-id">
+            <small-icon>en-messageDestination1-small-icon</small-icon>
+            <large-icon>en-messageDestination1-large-icon</large-icon>
+        </icon>
+        <icon xml:lang="fr" id="fr-messageDestination1-icon-id">
+            <small-icon>fr-messageDestination1-small-icon</small-icon>
+            <large-icon>fr-messageDestination1-large-icon</large-icon>
+        </icon>
+        <icon xml:lang="de" id="de-messageDestination1-icon-id">
+            <small-icon>de-messageDestination1-small-icon</small-icon>
+            <large-icon>de-messageDestination1-large-icon</large-icon>
+        </icon>
+        <message-destination-name>messageDestination1Name
+        </message-destination-name>
+        <mapped-name>messageDestination1MappedName</mapped-name>
+        <lookup-name>messageDestination1LookupName</lookup-name>
+    </message-destination>
+    <message-destination id="messageDestination2-id">
+        <description>en-messageDestination2-desc</description>
+        <description xml:lang="fr">fr-messageDestination2-desc
+        </description>
+        <description xml:lang="de">de-messageDestination2-desc
+        </description>
+        <display-name>en-messageDestination2-disp</display-name>
+        <display-name xml:lang="fr">fr-messageDestination2-disp
+        </display-name>
+        <display-name xml:lang="de">de-messageDestination2-disp
+        </display-name>
+        <icon id="en-messageDestination2-icon-id">
+            <small-icon>en-messageDestination2-small-icon</small-icon>
+            <large-icon>en-messageDestination2-large-icon</large-icon>
+        </icon>
+        <icon xml:lang="fr" id="fr-messageDestination2-icon-id">
+            <small-icon>fr-messageDestination2-small-icon</small-icon>
+            <large-icon>fr-messageDestination2-large-icon</large-icon>
+        </icon>
+        <icon xml:lang="de" id="de-messageDestination2-icon-id">
+            <small-icon>de-messageDestination2-small-icon</small-icon>
+            <large-icon>de-messageDestination2-large-icon</large-icon>
+        </icon>
+        <message-destination-name>messageDestination2Name
+        </message-destination-name>
+        <mapped-name>messageDestination2MappedName</mapped-name>
+        <lookup-name>messageDestination2LookupName</lookup-name>
+    </message-destination>
+
+    <locale-encoding-mapping-list id="locale-encoding-mapping-list0">
+        <locale-encoding-mapping>
+            <locale>en</locale>
+            <encoding>en</encoding>
+        </locale-encoding-mapping>
+    </locale-encoding-mapping-list>
+
+    <!-- jakartaee:11:context-service -->
+    <context-service id="webAppContextService1-id">
+        <description>webAppContextService1-desc</description>
+        <name>webAppContextService1-name</name>
+        <qualifier>webAppContextService1Qualifier1</qualifier>
+        <qualifier>webAppContextService1Qualifier2</qualifier>
+        <cleared>webAppContextService1-cleared</cleared>
+        <propagated>webAppContextService1-propagated</propagated>
+        <unchanged>webAppContextService1-unchanged</unchanged>
+        <property id="webAppContextService1Property1-id">
+            <name>webAppContextService1Property1Name</name>
+            <value>webAppContextService1Property1Value</value>
+        </property>
+        <property id="webAppContextService1Property2-id">
+            <name>webAppContextService1Property2Name</name>
+            <value>webAppContextService1Property2Value</value>
+        </property>
+    </context-service>
+    <context-service id="webAppContextService2-id">
+        <description>webAppContextService2-desc</description>
+        <name>webAppContextService2-name</name>
+        <qualifier>webAppContextService2Qualifier1</qualifier>
+        <qualifier>webAppContextService2Qualifier2</qualifier>
+        <cleared>webAppContextService2-cleared</cleared>
+        <propagated>webAppContextService2-propagated</propagated>
+        <unchanged>webAppContextService2-unchanged</unchanged>
+        <property id="webAppContextService2Property1-id">
+            <name>webAppContextService2Property1Name</name>
+            <value>webAppContextService2Property1Value</value>
+        </property>
+        <property id="webAppContextService2Property2-id">
+            <name>webAppContextService2Property2Name</name>
+            <value>webAppContextService2Property2Value</value>
+        </property>
+    </context-service>
+    <context-service id="webAppContextService3-id">
+        <name>webAppContextService3-name</name>
+    </context-service>
+
+    <!-- jakartaee:11:managed-executor -->
+    <managed-executor id="webAppManagedExecutor1-id">
+        <description>webAppManagedExecutor1-desc</description>
+        <name>webAppManagedExecutor1-name</name>
+        <context-service-ref>webAppManagedExecutor1-contextServiceRef</context-service-ref>
+        <qualifier>webAppManagedExecutor1Qualifier1</qualifier>
+        <qualifier>webAppManagedExecutor1Qualifier2</qualifier>
+        <max-async>1</max-async>
+        <hung-task-threshold>1</hung-task-threshold>
+        <virtual>true</virtual>
+        <property id="webAppManagedExecutor1Property1-id">
+            <name>webAppManagedExecutor1Property1Name</name>
+            <value>webAppManagedExecutor1Property1Value</value>
+        </property>
+        <property id="webAppManagedExecutor1Property2-id">
+            <name>webAppManagedExecutor1Property2Name</name>
+            <value>webAppManagedExecutor1Property2Value</value>
+        </property>
+    </managed-executor>
+    <managed-executor id="webAppManagedExecutor2-id">
+        <description>webAppManagedExecutor2-desc</description>
+        <name>webAppManagedExecutor2-name</name>
+        <context-service-ref>webAppManagedExecutor2-contextServiceRef</context-service-ref>
+        <qualifier>webAppManagedExecutor2Qualifier1</qualifier>
+        <qualifier>webAppManagedExecutor2Qualifier2</qualifier>
+        <max-async>2</max-async>
+        <hung-task-threshold>2</hung-task-threshold>
+        <virtual>false</virtual>
+        <property id="webAppManagedExecutor2Property1-id">
+            <name>webAppManagedExecutor2Property1Name</name>
+            <value>webAppManagedExecutor2Property1Value</value>
+        </property>
+        <property id="webAppManagedExecutor2Property2-id">
+            <name>webAppManagedExecutor2Property2Name</name>
+            <value>webAppManagedExecutor2Property2Value</value>
+        </property>
+    </managed-executor>
+    <managed-executor id="webAppManagedExecutor3-id">
+        <name>webAppManagedExecutor3-name</name>
+    </managed-executor>
+
+    <!-- jakartaee:11:managed-scheduled-executor -->
+    <managed-scheduled-executor id="webAppManagedScheduledExecutor1-id">
+        <description>webAppManagedScheduledExecutor1-desc</description>
+        <name>webAppManagedScheduledExecutor1-name</name>
+        <context-service-ref>webAppManagedScheduledExecutor1-contextServiceRef</context-service-ref>
+        <qualifier>webAppManagedScheduledExecutor1Qualifier1</qualifier>
+        <qualifier>webAppManagedScheduledExecutor1Qualifier2</qualifier>
+        <max-async>1</max-async>
+        <hung-task-threshold>1</hung-task-threshold>
+        <virtual>true</virtual>
+        <property id="webAppManagedScheduledExecutor1Property1-id">
+            <name>webAppManagedScheduledExecutor1Property1Name</name>
+            <value>webAppManagedScheduledExecutor1Property1Value</value>
+        </property>
+        <property id="webAppManagedScheduledExecutor1Property2-id">
+            <name>webAppManagedScheduledExecutor1Property2Name</name>
+            <value>webAppManagedScheduledExecutor1Property2Value</value>
+        </property>
+    </managed-scheduled-executor>
+    <managed-scheduled-executor id="webAppManagedScheduledExecutor2-id">
+        <description>webAppManagedScheduledExecutor2-desc</description>
+        <name>webAppManagedScheduledExecutor2-name</name>
+        <context-service-ref>webAppManagedScheduledExecutor2-contextServiceRef</context-service-ref>
+        <qualifier>webAppManagedScheduledExecutor2Qualifier1</qualifier>
+        <qualifier>webAppManagedScheduledExecutor2Qualifier2</qualifier>
+        <max-async>2</max-async>
+        <hung-task-threshold>2</hung-task-threshold>
+        <virtual>false</virtual>
+        <property id="webAppManagedScheduledExecutor2Property1-id">
+            <name>webAppManagedScheduledExecutor2Property1Name</name>
+            <value>webAppManagedScheduledExecutor2Property1Value</value>
+        </property>
+        <property id="webAppManagedScheduledExecutor2Property2-id">
+            <name>webAppManagedScheduledExecutor2Property2Name</name>
+            <value>webAppManagedScheduledExecutor2Property2Value</value>
+        </property>
+    </managed-scheduled-executor>
+    <managed-scheduled-executor id="webAppManagedScheduledExecutor3-id">
+        <name>webAppManagedScheduledExecutor3-name</name>
+    </managed-scheduled-executor>
+
+    <!-- jakartaee:11:managed-thread-factory -->
+    <managed-thread-factory id="webAppManagedThreadFactory1-id">
+        <description>webAppManagedThreadFactory1-desc</description>
+        <name>webAppManagedThreadFactory1-name</name>
+        <context-service-ref>webAppManagedThreadFactory1-contextServiceRef</context-service-ref>
+        <qualifier>webAppManagedThreadFactory1Qualifier1</qualifier>
+        <qualifier>webAppManagedThreadFactory1Qualifier2</qualifier>
+        <priority>1</priority>
+        <virtual>true</virtual>
+        <property id="webAppManagedThreadFactory1Property1-id">
+            <name>webAppManagedThreadFactory1Property1Name</name>
+            <value>webAppManagedThreadFactory1Property1Value</value>
+        </property>
+        <property id="webAppManagedThreadFactory1Property2-id">
+            <name>webAppManagedThreadFactory1Property2Name</name>
+            <value>webAppManagedThreadFactory1Property2Value</value>
+        </property>
+    </managed-thread-factory>
+    <managed-thread-factory id="webAppManagedThreadFactory2-id">
+        <description>webAppManagedThreadFactory2-desc</description>
+        <name>webAppManagedThreadFactory2-name</name>
+        <context-service-ref>webAppManagedThreadFactory2-contextServiceRef</context-service-ref>
+        <qualifier>webAppManagedThreadFactory2Qualifier1</qualifier>
+        <qualifier>webAppManagedThreadFactory2Qualifier2</qualifier>
+        <priority>2</priority>
+        <virtual>false</virtual>
+        <property id="webAppManagedThreadFactory2Property1-id">
+            <name>webAppManagedThreadFactory2Property1Name</name>
+            <value>webAppManagedThreadFactory2Property1Value</value>
+        </property>
+        <property id="webAppManagedThreadFactory2Property2-id">
+            <name>webAppManagedThreadFactory2Property2Name</name>
+            <value>webAppManagedThreadFactory2Property2Value</value>
+        </property>
+    </managed-thread-factory>
+    <managed-thread-factory id="webAppManagedThreadFactory3-id">
+        <name>webAppManagedThreadFactory3-name</name>
+    </managed-thread-factory>
+</web-app>

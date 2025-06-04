@@ -133,6 +133,8 @@ public enum Element {
     PROPERTY("property"),
     PROTOCOL_BINDINGS("protocol-bindings"),
 
+    QUALIFIER("qualifier"),
+
     REMOTE("remote"),
     REQUIRED("required"),
     RES_AUTH("res-auth"),
@@ -177,6 +179,7 @@ public enum Element {
     USER("user"),
 
     VALUE("value"),
+    VIRTUAL("virtual"),
 
     WSDL_FILE("wsdl-file"),
     WSDL_OVERRIDE("wsdl-override"),;

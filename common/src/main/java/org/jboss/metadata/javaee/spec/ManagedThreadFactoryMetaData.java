@@ -6,6 +6,8 @@ package org.jboss.metadata.javaee.spec;
 
 import org.jboss.metadata.javaee.support.NamedMetaDataWithDescriptions;
 
+import java.util.List;
+
 /**
  *
  * @author emmartins
@@ -30,6 +32,16 @@ public class ManagedThreadFactoryMetaData extends NamedMetaDataWithDescriptions 
      *
      */
     private PropertiesMetaData properties;
+
+    /**
+     *
+     */
+    private List<String> qualifier;
+
+    /**
+     *
+     */
+    private Boolean virtual;
 
     /**
      *
@@ -89,4 +101,35 @@ public class ManagedThreadFactoryMetaData extends NamedMetaDataWithDescriptions 
         this.properties = properties;
     }
 
+    /**
+     *
+     * @return the value of qualifier
+     */
+    public List<String> getQualifier() {
+        return qualifier;
+    }
+
+    /**
+     *
+     * @param qualifier the qualifier to set
+     */
+    public void setQualifier(List<String> qualifier) {
+        this.qualifier = qualifier;
+    }
+
+    /**
+     *
+     * @return the value of virtual
+     */
+    public Boolean getVirtual() {
+        return virtual;
+    }
+
+    /**
+     *
+     * @param virtual the virtual to set
+     */
+    public void setVirtual(Boolean virtual) {
+        this.virtual = virtual;
+    }
 }
