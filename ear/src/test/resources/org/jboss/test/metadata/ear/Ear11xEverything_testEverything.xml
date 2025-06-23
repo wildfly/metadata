@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The JBoss Metadata Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<application xmlns="https://jakarta.ee/xml/ns/jakartaee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/application_11.xsd"
+             version="11" id="application-test-everything">
+
+    <application-name>ApplicationName</application-name>
+
+    <description>en-app-desc</description>
+    <description xml:lang="fr">fr-app-desc</description>
+    <description xml:lang="de">de-app-desc</description>
+    <display-name>en-app-disp</display-name>
+    <display-name xml:lang="fr">fr-app-disp</display-name>
+    <display-name xml:lang="de">de-app-disp</display-name>
+    <icon id="en-app-icon-id">
+        <small-icon>en-app-small-icon</small-icon>
+        <large-icon>en-app-large-icon</large-icon>
+    </icon>
+    <icon xml:lang="fr" id="fr-app-icon-id">
+        <small-icon>fr-app-small-icon</small-icon>
+        <large-icon>fr-app-large-icon</large-icon>
+    </icon>
+    <icon xml:lang="de" id="de-app-icon-id">
+        <small-icon>de-app-small-icon</small-icon>
+        <large-icon>de-app-large-icon</large-icon>
+    </icon>
+
+    <initialize-in-order>true</initialize-in-order>
+
+    <module id="connector0">
+        <connector>rar0.rar</connector>
+        <alt-dd>META-INF/alt-ra.xml</alt-dd>
+    </module>
+    <module id="java0">
+        <java>client0.jar</java>
+        <alt-dd>META-INF/alt-application-client.xml</alt-dd>
+    </module>
+    <module id="ejb0">
+        <ejb>ejb-jar0.jar</ejb>
+        <alt-dd>META-INF/alt-ejb-jar.xml</alt-dd>
+    </module>
+    <module id="ejb1">
+        <ejb>ejb-jar1.jar</ejb>
+        <alt-dd>META-INF/alt-ejb-jar.xml</alt-dd>
+    </module>
+    <module id="web0">
+        <web>
+            <web-uri>web-app0.war</web-uri>
+            <context-root>/web0</context-root>
+        </web>
+        <alt-dd>WEB-INF/alt-web.xml</alt-dd>
+    </module>
+    <module id="web1">
+        <web>
+            <web-uri>web-app1.war</web-uri>
+            <context-root>/web1</context-root>
+        </web>
+        <alt-dd>WEB-INF/alt-web.xml</alt-dd>
+    </module>
+
+    <security-role id="securityRole1-id">
+        <description>en-securityRole1-desc</description>
+        <description xml:lang="fr">fr-securityRole1-desc</description>
+        <description xml:lang="de">de-securityRole1-desc</description>
+        <role-name>securityRoleRef1RoleLink</role-name>
+    </security-role>
+    <security-role id="securityRole2-id">
+        <description>en-securityRole2-desc</description>
+        <description xml:lang="fr">fr-securityRole2-desc</description>
+        <description xml:lang="de">de-securityRole2-desc</description>
+        <role-name>securityRoleRef2RoleLink</role-name>
+    </security-role>
+
+    <library-directory>lib0</library-directory>
+
+    <env-entry id="appEnvEntry1-id">
+        <description>en-appEnvEntry1-desc</description>
+        <description xml:lang="fr">fr-appEnvEntry1-desc
+        </description>
+        <description xml:lang="de">de-appEnvEntry1-desc
+        </description>
+        <env-entry-name>appEnvEntry1Name</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>appEnvEntry1Value</env-entry-value>
+        <mapped-name>appEnvEntry1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appEnvEntry1Injection1Class
+            </injection-target-class>
+            <injection-target-name>appEnvEntry1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appEnvEntry1Injection2Class
+            </injection-target-class>
+            <injection-target-name>appEnvEntry1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </env-entry>
+    <env-entry id="appEnvEntry2-id">
+        <description>en-appEnvEntry2-desc</description>
+        <description xml:lang="fr">fr-appEnvEntry2-desc
+        </description>
+        <description xml:lang="de">de-appEnvEntry2-desc
+        </description>
+        <env-entry-name>appEnvEntry2Name</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>appEnvEntry2Value</env-entry-value>
+        <mapped-name>appEnvEntry2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appEnvEntry2Injection1Class
+            </injection-target-class>
+            <injection-target-name>appEnvEntry2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appEnvEntry2Injection2Class
+            </injection-target-class>
+            <injection-target-name>appEnvEntry2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </env-entry>
+    <ejb-ref id="appEjbRef1-id">
+        <description>en-appEjbRef1-desc</description>
+        <description xml:lang="fr">fr-appEjbRef1-desc</description>
+        <description xml:lang="de">de-appEjbRef1-desc</description>
+        <ejb-ref-name>appEjbRef1Name</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>appEjbRef1Home</home>
+        <remote>appEjbRef1Remote</remote>
+        <ejb-link>appEjbRef1EjbLink</ejb-link>
+        <mapped-name>appEjbRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appEjbRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>appEjbRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appEjbRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>appEjbRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </ejb-ref>
+    <ejb-ref id="appEjbRef2-id">
+        <description>en-appEjbRef2-desc</description>
+        <description xml:lang="fr">fr-appEjbRef2-desc</description>
+        <description xml:lang="de">de-appEjbRef2-desc</description>
+        <ejb-ref-name>appEjbRef2Name</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <home>appEjbRef2Home</home>
+        <remote>appEjbRef2Remote</remote>
+        <ejb-link>appEjbRef2EjbLink</ejb-link>
+        <mapped-name>appEjbRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appEjbRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>appEjbRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appEjbRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>appEjbRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </ejb-ref>
+    <ejb-local-ref id="appEjbLocalRef1-id">
+        <description>en-appEjbLocalRef1-desc</description>
+        <description xml:lang="fr">fr-appEjbLocalRef1-desc
+        </description>
+        <description xml:lang="de">de-appEjbLocalRef1-desc
+        </description>
+        <ejb-ref-name>appEjbLocalRef1Name</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local-home>appEjbLocalRef1LocalHome</local-home>
+        <local>appEjbLocalRef1Local</local>
+        <ejb-link>appEjbLocalRef1EjbLink</ejb-link>
+        <mapped-name>appEjbLocalRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appEjbLocalRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>appEjbLocalRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appEjbLocalRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>appEjbLocalRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </ejb-local-ref>
+    <ejb-local-ref id="appEjbLocalRef2-id">
+        <description>en-appEjbLocalRef2-desc</description>
+        <description xml:lang="fr">fr-appEjbLocalRef2-desc
+        </description>
+        <description xml:lang="de">de-appEjbLocalRef2-desc
+        </description>
+        <ejb-ref-name>appEjbLocalRef2Name</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>appEjbLocalRef2LocalHome</local-home>
+        <local>appEjbLocalRef2Local</local>
+        <ejb-link>appEjbLocalRef2EjbLink</ejb-link>
+        <mapped-name>appEjbLocalRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appEjbLocalRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>appEjbLocalRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appEjbLocalRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>appEjbLocalRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </ejb-local-ref>
+
+    <!-- service ref -->
+    <!-- TODO: full service-ref contents -->
+    <service-ref id="appServiceRef1-id">
+        <description>en-appServiceRef1-desc</description>
+        <description xml:lang="fr">fr-appServiceRef1-desc
+        </description>
+        <description xml:lang="de">de-appServiceRef1-desc
+        </description>
+        <service-ref-name>appServiceRef1Name</service-ref-name>
+        <service-interface>appServiceRef1Iface</service-interface>
+    </service-ref>
+    <service-ref id="appServiceRef2-id">
+        <description>en-appServiceRef2-desc</description>
+        <description xml:lang="fr">fr-appServiceRef2-desc
+        </description>
+        <description xml:lang="de">de-appServiceRef2-desc
+        </description>
+        <service-ref-name>appServiceRef2Name</service-ref-name>
+        <service-interface>appServiceRef2Iface</service-interface>
+    </service-ref>
+
+    <resource-ref id="appResourceRef1-id">
+        <description>en-appResourceRef1-desc</description>
+        <description xml:lang="fr">fr-appResourceRef1-desc
+        </description>
+        <description xml:lang="de">de-appResourceRef1-desc
+        </description>
+        <res-ref-name>appResourceRef1Name</res-ref-name>
+        <res-type>appResourceRef1Type</res-type>
+        <res-auth>Application</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+        <mapped-name>appResourceRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appResourceRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>appResourceRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appResourceRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>appResourceRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </resource-ref>
+    <resource-ref id="appResourceRef2-id">
+        <description>en-appResourceRef2-desc</description>
+        <description xml:lang="fr">fr-appResourceRef2-desc
+        </description>
+        <description xml:lang="de">de-appResourceRef2-desc
+        </description>
+        <res-ref-name>appResourceRef2Name</res-ref-name>
+        <res-type>appResourceRef2Type</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Unshareable</res-sharing-scope>
+        <mapped-name>appResourceRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appResourceRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>appResourceRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appResourceRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>appResourceRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </resource-ref>
+    <resource-env-ref id="appResourceEnvRef1-id">
+        <description>en-appResourceEnvRef1-desc</description>
+        <description xml:lang="fr">fr-appResourceEnvRef1-desc
+        </description>
+        <description xml:lang="de">de-appResourceEnvRef1-desc
+        </description>
+        <resource-env-ref-name>appResourceEnvRef1Name
+        </resource-env-ref-name>
+        <resource-env-ref-type>appResourceEnvRef1Type
+        </resource-env-ref-type>
+        <mapped-name>appResourceEnvRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appResourceEnvRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>appResourceEnvRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appResourceEnvRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>appResourceEnvRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </resource-env-ref>
+    <resource-env-ref id="appResourceEnvRef2-id">
+        <description>en-appResourceEnvRef2-desc</description>
+        <description xml:lang="fr">fr-appResourceEnvRef2-desc
+        </description>
+        <description xml:lang="de">de-appResourceEnvRef2-desc
+        </description>
+        <resource-env-ref-name>appResourceEnvRef2Name
+        </resource-env-ref-name>
+        <resource-env-ref-type>appResourceEnvRef2Type
+        </resource-env-ref-type>
+        <mapped-name>appResourceEnvRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appResourceEnvRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>appResourceEnvRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appResourceEnvRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>appResourceEnvRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </resource-env-ref>
+    <message-destination-ref id="appMessageDestinationRef1-id">
+        <description>en-appMessageDestinationRef1-desc</description>
+        <description xml:lang="fr">fr-appMessageDestinationRef1-desc
+        </description>
+        <description xml:lang="de">de-appMessageDestinationRef1-desc
+        </description>
+        <message-destination-ref-name>appMessageDestinationRef1Name
+        </message-destination-ref-name>
+        <message-destination-type>appMessageDestinationRef1Type
+        </message-destination-type>
+        <message-destination-usage>Consumes</message-destination-usage>
+        <message-destination-link>appMessageDestinationRef1Link
+        </message-destination-link>
+        <mapped-name>appMessageDestinationRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appMessageDestinationRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>appMessageDestinationRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appMessageDestinationRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>appMessageDestinationRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </message-destination-ref>
+    <message-destination-ref id="appMessageDestinationRef2-id">
+        <description>en-appMessageDestinationRef2-desc</description>
+        <description xml:lang="fr">fr-appMessageDestinationRef2-desc
+        </description>
+        <description xml:lang="de">de-appMessageDestinationRef2-desc
+        </description>
+        <message-destination-ref-name>appMessageDestinationRef2Name
+        </message-destination-ref-name>
+        <message-destination-type>appMessageDestinationRef2Type
+        </message-destination-type>
+        <message-destination-usage>Produces</message-destination-usage>
+        <message-destination-link>appMessageDestinationRef2Link
+        </message-destination-link>
+        <mapped-name>appMessageDestinationRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appMessageDestinationRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>appMessageDestinationRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appMessageDestinationRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>appMessageDestinationRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </message-destination-ref>
+    <message-destination-ref id="appMessageDestinationRef3-id">
+        <description>en-appMessageDestinationRef3-desc</description>
+        <description xml:lang="fr">fr-appMessageDestinationRef3-desc
+        </description>
+        <description xml:lang="de">de-appMessageDestinationRef3-desc
+        </description>
+        <message-destination-ref-name>appMessageDestinationRef3Name
+        </message-destination-ref-name>
+        <message-destination-type>appMessageDestinationRef3Type
+        </message-destination-type>
+        <message-destination-usage>ConsumesProduces</message-destination-usage>
+        <message-destination-link>appMessageDestinationRef3Link
+        </message-destination-link>
+        <mapped-name>appMessageDestinationRef3MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appMessageDestinationRef3Injection1Class
+            </injection-target-class>
+            <injection-target-name>appMessageDestinationRef3Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appMessageDestinationRef3Injection2Class
+            </injection-target-class>
+            <injection-target-name>appMessageDestinationRef3Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </message-destination-ref>
+    <persistence-context-ref id="appPersistenceContextRef1-id">
+        <description>en-appPersistenceContextRef1-desc</description>
+        <description xml:lang="fr">fr-appPersistenceContextRef1-desc
+        </description>
+        <description xml:lang="de">de-appPersistenceContextRef1-desc
+        </description>
+        <persistence-context-ref-name>appPersistenceContextRef1Name
+        </persistence-context-ref-name>
+        <persistence-unit-name>appPersistenceContextRef1Unit
+        </persistence-unit-name>
+        <persistence-context-type>Transaction</persistence-context-type>
+        <persistence-property id="appPersistenceContextRef1Property1-id">
+            <name>appPersistenceContextRef1Property1Name</name>
+            <value>appPersistenceContextRef1Property1Value</value>
+        </persistence-property>
+        <persistence-property id="appPersistenceContextRef1Property2-id">
+            <name>appPersistenceContextRef1Property2Name</name>
+            <value>appPersistenceContextRef1Property2Value</value>
+        </persistence-property>
+        <mapped-name>appPersistenceContextRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appPersistenceContextRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>appPersistenceContextRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appPersistenceContextRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>appPersistenceContextRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </persistence-context-ref>
+    <persistence-context-ref id="appPersistenceContextRef2-id">
+        <description>en-appPersistenceContextRef2-desc</description>
+        <description xml:lang="fr">fr-appPersistenceContextRef2-desc
+        </description>
+        <description xml:lang="de">de-appPersistenceContextRef2-desc
+        </description>
+        <persistence-context-ref-name>appPersistenceContextRef2Name
+        </persistence-context-ref-name>
+        <persistence-unit-name>appPersistenceContextRef2Unit
+        </persistence-unit-name>
+        <persistence-context-type>Extended</persistence-context-type>
+        <persistence-context-synchronization>Unsynchronized
+        </persistence-context-synchronization>
+        <persistence-property id="appPersistenceContextRef2Property1-id">
+            <name>appPersistenceContextRef2Property1Name</name>
+            <value>appPersistenceContextRef2Property1Value</value>
+        </persistence-property>
+        <persistence-property id="appPersistenceContextRef2Property2-id">
+            <name>appPersistenceContextRef2Property2Name</name>
+            <value>appPersistenceContextRef2Property2Value</value>
+        </persistence-property>
+        <mapped-name>appPersistenceContextRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appPersistenceContextRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>appPersistenceContextRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appPersistenceContextRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>appPersistenceContextRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </persistence-context-ref>
+    <persistence-unit-ref id="appPersistenceUnitRef1-id">
+        <description>en-appPersistenceUnitRef1-desc</description>
+        <description xml:lang="fr">fr-appPersistenceUnitRef1-desc
+        </description>
+        <description xml:lang="de">de-appPersistenceUnitRef1-desc
+        </description>
+        <persistence-unit-ref-name>appPersistenceUnitRef1Name
+        </persistence-unit-ref-name>
+        <persistence-unit-name>appPersistenceUnitRef1Unit
+        </persistence-unit-name>
+        <mapped-name>appPersistenceUnitRef1MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appPersistenceUnitRef1Injection1Class
+            </injection-target-class>
+            <injection-target-name>appPersistenceUnitRef1Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appPersistenceUnitRef1Injection2Class
+            </injection-target-class>
+            <injection-target-name>appPersistenceUnitRef1Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </persistence-unit-ref>
+    <persistence-unit-ref id="appPersistenceUnitRef2-id">
+        <description>en-appPersistenceUnitRef2-desc</description>
+        <description xml:lang="fr">fr-appPersistenceUnitRef2-desc
+        </description>
+        <description xml:lang="de">de-appPersistenceUnitRef2-desc
+        </description>
+        <persistence-unit-ref-name>appPersistenceUnitRef2Name
+        </persistence-unit-ref-name>
+        <persistence-unit-name>appPersistenceUnitRef2Unit
+        </persistence-unit-name>
+        <mapped-name>appPersistenceUnitRef2MappedName</mapped-name>
+        <injection-target>
+            <injection-target-class>appPersistenceUnitRef2Injection1Class
+            </injection-target-class>
+            <injection-target-name>appPersistenceUnitRef2Injection1Name
+            </injection-target-name>
+        </injection-target>
+        <injection-target>
+            <injection-target-class>appPersistenceUnitRef2Injection2Class
+            </injection-target-class>
+            <injection-target-name>appPersistenceUnitRef2Injection2Name
+            </injection-target-name>
+        </injection-target>
+    </persistence-unit-ref>
+
+    <message-destination id="messageDestination1-id">
+        <description>en-messageDestination1-desc</description>
+        <description xml:lang="fr">fr-messageDestination1-desc
+        </description>
+        <description xml:lang="de">de-messageDestination1-desc
+        </description>
+        <display-name>en-messageDestination1-disp</display-name>
+        <display-name xml:lang="fr">fr-messageDestination1-disp
+        </display-name>
+        <display-name xml:lang="de">de-messageDestination1-disp
+        </display-name>
+        <icon id="en-messageDestination1-icon-id">
+            <small-icon>en-messageDestination1-small-icon</small-icon>
+            <large-icon>en-messageDestination1-large-icon</large-icon>
+        </icon>
+        <icon xml:lang="fr" id="fr-messageDestination1-icon-id">
+            <small-icon>fr-messageDestination1-small-icon</small-icon>
+            <large-icon>fr-messageDestination1-large-icon</large-icon>
+        </icon>
+        <icon xml:lang="de" id="de-messageDestination1-icon-id">
+            <small-icon>de-messageDestination1-small-icon</small-icon>
+            <large-icon>de-messageDestination1-large-icon</large-icon>
+        </icon>
+        <message-destination-name>messageDestination1Name
+        </message-destination-name>
+        <mapped-name>messageDestination1MappedName</mapped-name>
+        <lookup-name>messageDestination1LookupName</lookup-name>
+    </message-destination>
+    <message-destination id="messageDestination2-id">
+        <description>en-messageDestination2-desc</description>
+        <description xml:lang="fr">fr-messageDestination2-desc
+        </description>
+        <description xml:lang="de">de-messageDestination2-desc
+        </description>
+        <display-name>en-messageDestination2-disp</display-name>
+        <display-name xml:lang="fr">fr-messageDestination2-disp
+        </display-name>
+        <display-name xml:lang="de">de-messageDestination2-disp
+        </display-name>
+        <icon id="en-messageDestination2-icon-id">
+            <small-icon>en-messageDestination2-small-icon</small-icon>
+            <large-icon>en-messageDestination2-large-icon</large-icon>
+        </icon>
+        <icon xml:lang="fr" id="fr-messageDestination2-icon-id">
+            <small-icon>fr-messageDestination2-small-icon</small-icon>
+            <large-icon>fr-messageDestination2-large-icon</large-icon>
+        </icon>
+        <icon xml:lang="de" id="de-messageDestination2-icon-id">
+            <small-icon>de-messageDestination2-small-icon</small-icon>
+            <large-icon>de-messageDestination2-large-icon</large-icon>
+        </icon>
+        <message-destination-name>messageDestination2Name
+        </message-destination-name>
+        <mapped-name>messageDestination2MappedName</mapped-name>
+        <lookup-name>messageDestination2LookupName</lookup-name>
+    </message-destination>
+
+    <data-source>
+        <description>en-appDataSource1-desc</description>
+        <name>appDataSource1Name</name>
+        <class-name>appDataSource1ClassName</class-name>
+        <server-name>appDataSource1ServerName</server-name>
+        <port-number>1</port-number>
+        <database-name>appDataSource1DatabaseName</database-name>
+        <url>jdbc:appDataSource1:url</url>
+        <user>appDataSource1User</user>
+        <password>appDataSource1Password</password>
+        <property id="appDataSource1Property1-id">
+            <name>appDataSource1Property1Name</name>
+            <value>appDataSource1Property1Value</value>
+        </property>
+        <property id="appDataSource1Property2-id">
+            <name>appDataSource1Property2Name</name>
+            <value>appDataSource1Property2Value</value>
+        </property>
+        <login-timeout>1</login-timeout>
+        <transactional>false</transactional>
+        <isolation-level>TRANSACTION_READ_UNCOMMITTED</isolation-level>
+        <initial-pool-size>1</initial-pool-size>
+        <max-pool-size>1</max-pool-size>
+        <min-pool-size>1</min-pool-size>
+        <max-idle-time>1</max-idle-time>
+        <max-statements>1</max-statements>
+    </data-source>
+    <data-source>
+        <description>en-appDataSource2-desc</description>
+        <name>appDataSource2Name</name>
+        <class-name>appDataSource2ClassName</class-name>
+        <server-name>appDataSource2ServerName</server-name>
+        <port-number>2</port-number>
+        <database-name>appDataSource2DatabaseName</database-name>
+        <url>jdbc:appDataSource2:url</url>
+        <user>appDataSource2User</user>
+        <password>appDataSource2Password</password>
+        <property id="appDataSource2Property1-id">
+            <name>appDataSource2Property1Name</name>
+            <value>appDataSource2Property1Value</value>
+        </property>
+        <property id="appDataSource2Property2-id">
+            <name>appDataSource2Property2Name</name>
+            <value>appDataSource2Property2Value</value>
+        </property>
+        <login-timeout>2</login-timeout>
+        <transactional>true</transactional>
+        <isolation-level>TRANSACTION_READ_COMMITTED</isolation-level>
+        <initial-pool-size>2</initial-pool-size>
+        <max-pool-size>2</max-pool-size>
+        <min-pool-size>2</min-pool-size>
+        <max-idle-time>2</max-idle-time>
+        <max-statements>2</max-statements>
+    </data-source>
+
+    <!-- javaee:7:jms-connection-factory -->
+    <jms-connection-factory>
+        <description>appJmsConnectionFactory1Desc</description>
+        <name>appJmsConnectionFactory1Name</name>
+        <interface-name>javax.jms.QueueConnectionFactory</interface-name>
+        <class-name>appJmsConnectionFactory1ClassName</class-name>
+        <resource-adapter>appJmsConnectionFactory1ResourceAdapter
+        </resource-adapter>
+        <user>appJmsConnectionFactory1User</user>
+        <password>appJmsConnectionFactory1Password</password>
+        <client-id>appJmsConnectionFactory1ClientId</client-id>
+        <property id="appJmsConnectionFactory1Property1-id">
+            <name>appJmsConnectionFactory1Property1Name</name>
+            <value>appJmsConnectionFactory1Property1Value</value>
+        </property>
+        <property id="appJmsConnectionFactory1Property2-id">
+            <name>appJmsConnectionFactory1Property2Name</name>
+            <value>appJmsConnectionFactory1Property2Value</value>
+        </property>
+        <transactional>true</transactional>
+        <max-pool-size>1</max-pool-size>
+        <min-pool-size>1</min-pool-size>
+    </jms-connection-factory>
+    <jms-connection-factory>
+        <description>appJmsConnectionFactory2Desc</description>
+        <name>appJmsConnectionFactory2Name</name>
+        <interface-name>javax.jms.TopicConnectionFactory</interface-name>
+        <class-name>appJmsConnectionFactory2ClassName</class-name>
+        <resource-adapter>appJmsConnectionFactory2ResourceAdapter
+        </resource-adapter>
+        <user>appJmsConnectionFactory2User</user>
+        <password>appJmsConnectionFactory2Password</password>
+        <client-id>appJmsConnectionFactory2ClientId</client-id>
+        <property id="appJmsConnectionFactory2Property1-id">
+            <name>appJmsConnectionFactory2Property1Name</name>
+            <value>appJmsConnectionFactory2Property1Value</value>
+        </property>
+        <property id="appJmsConnectionFactory2Property2-id">
+            <name>appJmsConnectionFactory2Property2Name</name>
+            <value>appJmsConnectionFactory2Property2Value</value>
+        </property>
+        <transactional>false</transactional>
+        <max-pool-size>2</max-pool-size>
+        <min-pool-size>2</min-pool-size>
+    </jms-connection-factory>
+    <jms-connection-factory>
+        <name>appJmsConnectionFactory3Name</name>
+    </jms-connection-factory>
+    <!-- javaee:7:jms-destination -->
+    <jms-destination>
+        <description>appJmsDestination1Desc</description>
+        <name>appJmsDestination1Name</name>
+        <interface-name>javax.jms.Queue</interface-name>
+        <class-name>appJmsDestination1ClassName</class-name>
+        <resource-adapter>appJmsDestination1ResourceAdapter
+        </resource-adapter>
+        <destination-name>appJmsDestination1DestinationName
+        </destination-name>
+        <property id="appJmsDestination1Property1-id">
+            <name>appJmsDestination1Property1Name</name>
+            <value>appJmsDestination1Property1Value</value>
+        </property>
+        <property id="appJmsDestination1Property2-id">
+            <name>appJmsDestination1Property2Name</name>
+            <value>appJmsDestination1Property2Value</value>
+        </property>
+    </jms-destination>
+    <jms-destination>
+        <description>appJmsDestination2Desc</description>
+        <name>appJmsDestination2Name</name>
+        <interface-name>javax.jms.Queue</interface-name>
+        <class-name>appJmsDestination2ClassName</class-name>
+        <resource-adapter>appJmsDestination2ResourceAdapter
+        </resource-adapter>
+        <destination-name>appJmsDestination2DestinationName
+        </destination-name>
+        <property id="appJmsDestination2Property1-id">
+            <name>appJmsDestination2Property1Name</name>
+            <value>appJmsDestination2Property1Value</value>
+        </property>
+        <property id="appJmsDestination2Property2-id">
+            <name>appJmsDestination2Property2Name</name>
+            <value>appJmsDestination2Property2Value</value>
+        </property>
+    </jms-destination>
+    <jms-destination>
+        <name>appJmsDestination3Name</name>
+        <interface-name>javax.jms.Topic</interface-name>
+    </jms-destination>
+    <!-- javaee:7:mail-session -->
+    <mail-session>
+        <description>appMailSession1Desc</description>
+        <name>appMailSession1Name</name>
+        <store-protocol>appMailSession1StoreProtocol</store-protocol>
+        <store-protocol-class>appMailSession1StoreProtocolClass
+        </store-protocol-class>
+        <transport-protocol>appMailSession1TransportProtocol
+        </transport-protocol>
+        <transport-protocol-class>appMailSession1TransportProtocolClass
+        </transport-protocol-class>
+        <host>appMailSession1Host</host>
+        <user>appMailSession1User</user>
+        <password>appMailSession1Password</password>
+        <from>appMailSession1From</from>
+        <property id="appMailSession1Property1-id">
+            <name>appMailSession1Property1Name</name>
+            <value>appMailSession1Property1Value</value>
+        </property>
+        <property id="appMailSession1Property2-id">
+            <name>appMailSession1Property2Name</name>
+            <value>appMailSession1Property2Value</value>
+        </property>
+    </mail-session>
+    <mail-session>
+        <description>appMailSession2Desc</description>
+        <name>appMailSession2Name</name>
+        <store-protocol>appMailSession2StoreProtocol</store-protocol>
+        <store-protocol-class>appMailSession2StoreProtocolClass
+        </store-protocol-class>
+        <transport-protocol>appMailSession2TransportProtocol
+        </transport-protocol>
+        <transport-protocol-class>appMailSession2TransportProtocolClass
+        </transport-protocol-class>
+        <host>appMailSession2Host</host>
+        <user>appMailSession2User</user>
+        <password>appMailSession2Password</password>
+        <from>appMailSession2From</from>
+        <property id="appMailSession2Property1-id">
+            <name>appMailSession2Property1Name</name>
+            <value>appMailSession2Property1Value</value>
+        </property>
+        <property id="appMailSession2Property2-id">
+            <name>appMailSession2Property2Name</name>
+            <value>appMailSession2Property2Value</value>
+        </property>
+    </mail-session>
+    <mail-session>
+        <name>appMailSession3Name</name>
+    </mail-session>
+    <!-- javaee:7:connection-factory -->
+    <connection-factory>
+        <description>appConnectionFactory1Desc</description>
+        <name>appConnectionFactory1Name</name>
+        <interface-name>appConnectionFactory1InterfaceName</interface-name>
+        <resource-adapter>appConnectionFactory1ResourceAdapter
+        </resource-adapter>
+        <max-pool-size>1</max-pool-size>
+        <min-pool-size>1</min-pool-size>
+        <transaction-support>NoTransaction</transaction-support>
+        <property id="appConnectionFactory1Property1-id">
+            <name>appConnectionFactory1Property1Name</name>
+            <value>appConnectionFactory1Property1Value</value>
+        </property>
+        <property id="appConnectionFactory1Property2-id">
+            <name>appConnectionFactory1Property2Name</name>
+            <value>appConnectionFactory1Property2Value</value>
+        </property>
+    </connection-factory>
+    <connection-factory>
+        <description>appConnectionFactory2Desc</description>
+        <name>appConnectionFactory2Name</name>
+        <interface-name>appConnectionFactory2InterfaceName</interface-name>
+        <resource-adapter>appConnectionFactory2ResourceAdapter
+        </resource-adapter>
+        <max-pool-size>2</max-pool-size>
+        <min-pool-size>2</min-pool-size>
+        <transaction-support>LocalTransaction</transaction-support>
+        <property id="appConnectionFactory2Property1-id">
+            <name>appConnectionFactory2Property1Name</name>
+            <value>appConnectionFactory2Property1Value</value>
+        </property>
+        <property id="appConnectionFactory2Property2-id">
+            <name>appConnectionFactory2Property2Name</name>
+            <value>appConnectionFactory2Property2Value</value>
+        </property>
+    </connection-factory>
+    <connection-factory>
+        <description>appConnectionFactory3Desc</description>
+        <name>appConnectionFactory3Name</name>
+        <interface-name>appConnectionFactory3InterfaceName</interface-name>
+        <resource-adapter>appConnectionFactory3ResourceAdapter
+        </resource-adapter>
+        <max-pool-size>3</max-pool-size>
+        <min-pool-size>3</min-pool-size>
+        <transaction-support>XATransaction</transaction-support>
+        <property id="appConnectionFactory3Property1-id">
+            <name>appConnectionFactory3Property1Name</name>
+            <value>appConnectionFactory3Property1Value</value>
+        </property>
+        <property id="appConnectionFactory3Property2-id">
+            <name>appConnectionFactory3Property2Name</name>
+            <value>appConnectionFactory3Property2Value</value>
+        </property>
+    </connection-factory>
+    <connection-factory>
+        <name>appConnectionFactory4Name</name>
+        <interface-name>appConnectionFactory4InterfaceName</interface-name>
+        <resource-adapter>appConnectionFactory4ResourceAdapter
+        </resource-adapter>
+    </connection-factory>
+    <!-- javaee:7:administered-object -->
+    <administered-object>
+        <description>appAdministeredObject1Desc</description>
+        <name>appAdministeredObject1Name</name>
+        <interface-name>appAdministeredObject1InterfaceName
+        </interface-name>
+        <class-name>appAdministeredObject1ClassName</class-name>
+        <resource-adapter>appAdministeredObject1ResourceAdapter
+        </resource-adapter>
+        <property id="appAdministeredObject1Property1-id">
+            <name>appAdministeredObject1Property1Name</name>
+            <value>appAdministeredObject1Property1Value</value>
+        </property>
+        <property id="appAdministeredObject1Property2-id">
+            <name>appAdministeredObject1Property2Name</name>
+            <value>appAdministeredObject1Property2Value</value>
+        </property>
+    </administered-object>
+    <administered-object>
+        <description>appAdministeredObject2Desc</description>
+        <name>appAdministeredObject2Name</name>
+        <interface-name>appAdministeredObject2InterfaceName
+        </interface-name>
+        <class-name>appAdministeredObject2ClassName</class-name>
+        <resource-adapter>appAdministeredObject2ResourceAdapter
+        </resource-adapter>
+        <property id="appAdministeredObject2Property1-id">
+            <name>appAdministeredObject2Property1Name</name>
+            <value>appAdministeredObject2Property1Value</value>
+        </property>
+        <property id="appAdministeredObject2Property2-id">
+            <name>appAdministeredObject2Property2Name</name>
+            <value>appAdministeredObject2Property2Value</value>
+        </property>
+    </administered-object>
+    <administered-object>
+        <name>appAdministeredObject3Name</name>
+        <class-name>appAdministeredObject3ClassName</class-name>
+        <resource-adapter>appAdministeredObject3ResourceAdapter
+        </resource-adapter>
+    </administered-object>
+
+    <!-- jakartaee:11:context-service -->
+    <context-service id="appContextService1-id">
+        <description>appContextService1-desc</description>
+        <name>appContextService1-name</name>
+        <qualifier>appContextService1Qualifier1</qualifier>
+        <qualifier>appContextService1Qualifier2</qualifier>
+        <cleared>appContextService1-cleared</cleared>
+        <propagated>appContextService1-propagated</propagated>
+        <unchanged>appContextService1-unchanged</unchanged>
+        <property id="appContextService1Property1-id">
+            <name>appContextService1Property1Name</name>
+            <value>appContextService1Property1Value</value>
+        </property>
+        <property id="appContextService1Property2-id">
+            <name>appContextService1Property2Name</name>
+            <value>appContextService1Property2Value</value>
+        </property>
+    </context-service>
+    <context-service id="appContextService2-id">
+        <description>appContextService2-desc</description>
+        <name>appContextService2-name</name>
+        <qualifier>appContextService2Qualifier1</qualifier>
+        <qualifier>appContextService2Qualifier2</qualifier>
+        <cleared>appContextService2-cleared</cleared>
+        <propagated>appContextService2-propagated</propagated>
+        <unchanged>appContextService2-unchanged</unchanged>
+        <property id="appContextService2Property1-id">
+            <name>appContextService2Property1Name</name>
+            <value>appContextService2Property1Value</value>
+        </property>
+        <property id="appContextService2Property2-id">
+            <name>appContextService2Property2Name</name>
+            <value>appContextService2Property2Value</value>
+        </property>
+    </context-service>
+    <context-service id="appContextService3-id">
+        <name>appContextService3-name</name>
+    </context-service>
+
+    <!-- jakartaee:11:managed-executor -->
+    <managed-executor id="appManagedExecutor1-id">
+        <description>appManagedExecutor1-desc</description>
+        <name>appManagedExecutor1-name</name>
+        <context-service-ref>appManagedExecutor1-contextServiceRef</context-service-ref>
+        <qualifier>appManagedExecutor1Qualifier1</qualifier>
+        <qualifier>appManagedExecutor1Qualifier2</qualifier>
+        <max-async>1</max-async>
+        <hung-task-threshold>1</hung-task-threshold>
+        <virtual>true</virtual>
+        <property id="appManagedExecutor1Property1-id">
+            <name>appManagedExecutor1Property1Name</name>
+            <value>appManagedExecutor1Property1Value</value>
+        </property>
+        <property id="appManagedExecutor1Property2-id">
+            <name>appManagedExecutor1Property2Name</name>
+            <value>appManagedExecutor1Property2Value</value>
+        </property>
+    </managed-executor>
+    <managed-executor id="appManagedExecutor2-id">
+        <description>appManagedExecutor2-desc</description>
+        <name>appManagedExecutor2-name</name>
+        <context-service-ref>appManagedExecutor2-contextServiceRef</context-service-ref>
+        <qualifier>appManagedExecutor2Qualifier1</qualifier>
+        <qualifier>appManagedExecutor2Qualifier2</qualifier>
+        <max-async>2</max-async>
+        <hung-task-threshold>2</hung-task-threshold>
+        <virtual>false</virtual>
+        <property id="appManagedExecutor2Property1-id">
+            <name>appManagedExecutor2Property1Name</name>
+            <value>appManagedExecutor2Property1Value</value>
+        </property>
+        <property id="appManagedExecutor2Property2-id">
+            <name>appManagedExecutor2Property2Name</name>
+            <value>appManagedExecutor2Property2Value</value>
+        </property>
+    </managed-executor>
+    <managed-executor id="appManagedExecutor3-id">
+        <name>appManagedExecutor3-name</name>
+    </managed-executor>
+
+    <!-- jakartaee:11:managed-scheduled-executor -->
+    <managed-scheduled-executor id="appManagedScheduledExecutor1-id">
+        <description>appManagedScheduledExecutor1-desc</description>
+        <name>appManagedScheduledExecutor1-name</name>
+        <context-service-ref>appManagedScheduledExecutor1-contextServiceRef</context-service-ref>
+        <qualifier>appManagedScheduledExecutor1Qualifier1</qualifier>
+        <qualifier>appManagedScheduledExecutor1Qualifier2</qualifier>
+        <max-async>1</max-async>
+        <hung-task-threshold>1</hung-task-threshold>
+        <virtual>true</virtual>
+        <property id="appManagedScheduledExecutor1Property1-id">
+            <name>appManagedScheduledExecutor1Property1Name</name>
+            <value>appManagedScheduledExecutor1Property1Value</value>
+        </property>
+        <property id="appManagedScheduledExecutor1Property2-id">
+            <name>appManagedScheduledExecutor1Property2Name</name>
+            <value>appManagedScheduledExecutor1Property2Value</value>
+        </property>
+    </managed-scheduled-executor>
+    <managed-scheduled-executor id="appManagedScheduledExecutor2-id">
+        <description>appManagedScheduledExecutor2-desc</description>
+        <name>appManagedScheduledExecutor2-name</name>
+        <context-service-ref>appManagedScheduledExecutor2-contextServiceRef</context-service-ref>
+        <qualifier>appManagedScheduledExecutor2Qualifier1</qualifier>
+        <qualifier>appManagedScheduledExecutor2Qualifier2</qualifier>
+        <max-async>2</max-async>
+        <hung-task-threshold>2</hung-task-threshold>
+        <virtual>false</virtual>
+        <property id="appManagedScheduledExecutor2Property1-id">
+            <name>appManagedScheduledExecutor2Property1Name</name>
+            <value>appManagedScheduledExecutor2Property1Value</value>
+        </property>
+        <property id="appManagedScheduledExecutor2Property2-id">
+            <name>appManagedScheduledExecutor2Property2Name</name>
+            <value>appManagedScheduledExecutor2Property2Value</value>
+        </property>
+    </managed-scheduled-executor>
+    <managed-scheduled-executor id="appManagedScheduledExecutor3-id">
+        <name>appManagedScheduledExecutor3-name</name>
+    </managed-scheduled-executor>
+
+    <!-- jakartaee:11:managed-thread-factory -->
+    <managed-thread-factory id="appManagedThreadFactory1-id">
+        <description>appManagedThreadFactory1-desc</description>
+        <name>appManagedThreadFactory1-name</name>
+        <context-service-ref>appManagedThreadFactory1-contextServiceRef</context-service-ref>
+        <qualifier>appManagedThreadFactory1Qualifier1</qualifier>
+        <qualifier>appManagedThreadFactory1Qualifier2</qualifier>
+        <priority>1</priority>
+        <virtual>true</virtual>
+        <property id="appManagedThreadFactory1Property1-id">
+            <name>appManagedThreadFactory1Property1Name</name>
+            <value>appManagedThreadFactory1Property1Value</value>
+        </property>
+        <property id="appManagedThreadFactory1Property2-id">
+            <name>appManagedThreadFactory1Property2Name</name>
+            <value>appManagedThreadFactory1Property2Value</value>
+        </property>
+    </managed-thread-factory>
+    <managed-thread-factory id="appManagedThreadFactory2-id">
+        <description>appManagedThreadFactory2-desc</description>
+        <name>appManagedThreadFactory2-name</name>
+        <context-service-ref>appManagedThreadFactory2-contextServiceRef</context-service-ref>
+        <qualifier>appManagedThreadFactory2Qualifier1</qualifier>
+        <qualifier>appManagedThreadFactory2Qualifier2</qualifier>
+        <priority>2</priority>
+        <virtual>false</virtual>
+        <property id="appManagedThreadFactory2Property1-id">
+            <name>appManagedThreadFactory2Property1Name</name>
+            <value>appManagedThreadFactory2Property1Value</value>
+        </property>
+        <property id="appManagedThreadFactory2Property2-id">
+            <name>appManagedThreadFactory2Property2Name</name>
+            <value>appManagedThreadFactory2Property2Value</value>
+        </property>
+    </managed-thread-factory>
+    <managed-thread-factory id="appManagedThreadFactory3-id">
+        <name>appManagedThreadFactory3-name</name>
+    </managed-thread-factory>
+</application>

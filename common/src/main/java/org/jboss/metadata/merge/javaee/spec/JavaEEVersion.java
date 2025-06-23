@@ -29,4 +29,5 @@ public enum JavaEEVersion {
 
     V10,
 
+    V11,
 }
