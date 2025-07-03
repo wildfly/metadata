@@ -947,7 +947,7 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
     }
 
     protected void assertContextServices(String prefix, ContextServicesMetaData metaDatas, Mode mode, boolean full, JavaEEVersion version) {
-        if (version != JavaEEVersion.V10 || !full) {
+        if (version != JavaEEVersion.V10 && version != JavaEEVersion.V11 || !full) {
             assertNull(metaDatas);
             return;
         }
@@ -1007,7 +1007,7 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
     }
 
     protected void assertManagedExecutors(String prefix, ManagedExecutorsMetaData metaDatas, Mode mode, boolean full, JavaEEVersion version) {
-        if (version != JavaEEVersion.V10 || !full) {
+        if (version != JavaEEVersion.V10 && version != JavaEEVersion.V11 || !full) {
             assertNull(metaDatas);
             return;
         }
@@ -1068,7 +1068,7 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
     }
 
     protected void assertManagedScheduledExecutors(String prefix, ManagedScheduledExecutorsMetaData metaDatas, Mode mode, boolean full, JavaEEVersion version) {
-        if (version != JavaEEVersion.V10 || !full) {
+        if (version != JavaEEVersion.V10 && version != JavaEEVersion.V11 || !full) {
             assertNull(metaDatas);
             return;
         }
@@ -1129,7 +1129,7 @@ public abstract class AbstractJavaEEEverythingTest extends AbstractJavaEEMetaDat
     }
 
     protected void assertManagedThreadFactories(String prefix, ManagedThreadFactoriesMetaData metaDatas, Mode mode, boolean full, JavaEEVersion version) {
-        if (version != JavaEEVersion.V10 || !full) {
+        if (version != JavaEEVersion.V10 && version != JavaEEVersion.V11 || !full) {
             assertNull(metaDatas);
             return;
         }
