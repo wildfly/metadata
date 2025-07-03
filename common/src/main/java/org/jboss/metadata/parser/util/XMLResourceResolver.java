@@ -83,6 +83,7 @@ public class XMLResourceResolver implements XMLResolver, EntityResolver, LSResou
         registerEntity("http://xmlns.jcp.org/xml/ns/javaee/application_8.xsd", "application_8.xsd");
         registerEntity("https://jakarta.ee/xml/ns/jakartaee/application_9.xsd", "application_9.xsd");
         registerEntity("https://jakarta.ee/xml/ns/jakartaee/application_10.xsd", "application_10.xsd");
+        registerEntity("https://jakarta.ee/xml/ns/jakartaee/application_11.xsd", "application_11.xsd");
 
         // jboss-app
         registerEntity("-//JBoss//DTD J2EE Application 1.3//EN", "jboss-app_3_0.dtd");
