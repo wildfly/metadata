@@ -70,11 +70,13 @@ public class TldMetaDataParser extends MetaDataElementParser {
                 version = Version.TLD_3_0;
             } else if ("3.1".equals(versionString)) {
                 version = Version.TLD_3_1;
+            } else if ("4.0".equals(versionString)) {
+                version = Version.TLD_4_0;
             }
         }
         if (version == null) {
             // It is likely an error to not have a version at this point though
-            version = Version.TLD_3_1;
+            version = Version.TLD_4_0;
         }
         TldMetaData tld = new TldMetaData();
         // Handle attributes
