@@ -219,6 +219,7 @@ public class XMLResourceResolver implements XMLResolver, EntityResolver, LSResou
         registerEntity("http://xmlns.jcp.org/xml/ns/javaee/web-jsptaglibrary_2_1.xsd", "web-jsptaglibrary_2_1.xsd");
         registerEntity("https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_0.xsd", "web-jsptaglibrary_3_0.xsd");
         registerEntity("https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_1.xsd", "web-jsptaglibrary_3_1.xsd");
+        registerEntity("https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_4_0.xsd", "web-jsptaglibrary_4_0.xsd");
         registerEntity("http://xmlns.jcp.org/xml/ns/javaee/web-partialresponse_2_2.xsd", "web-partialresponse_2_2.xsd");
         registerEntity("http://xmlns.jcp.org/xml/ns/javaee/web-partialresponse_2_3.xsd", "web-partialresponse_2_3.xsd");
         registerEntity("https://jakarta.ee/xml/ns/jakartaee/web-partialresponse_3_0.xsd", "web-partialresponse_3_0.xsd");
