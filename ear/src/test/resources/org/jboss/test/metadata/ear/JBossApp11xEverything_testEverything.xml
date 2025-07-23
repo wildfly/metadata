@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The JBoss Metadata Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<jboss-app xmlns="urn:jboss:jakartaee:1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="urn:jboss:jakartaee:1.0 https://www.jboss.org/schema/jbossas/jboss-app_11_0.xsd"
+           version="11"
+           id="jboss-app-id">
+
+    <distinct-name>foo</distinct-name>
+    <library-directory>jboss-app-lib0</library-directory>
+
+    <!-- Add a sar0 module -->
+    <module id="sar0">
+        <service>sar0.sar</service>
+    </module>
+    <!-- Override the web1 context-root -->
+    <module id="web1">
+        <web>
+            <web-uri>web-app1.war</web-uri>
+            <context-root>/web1-override</context-root>
+        </web>
+    </module>
+    <!-- Add a web2 module -->
+    <module id="web2">
+        <web>
+            <web-uri>web-app2.war</web-uri>
+            <context-root>/web2</context-root>
+        </web>
+    </module>
+    <module id="har0">
+        <har>har0.har</har>
+    </module>
+    <security-role id="security-role0">
+        <description>The 0 security role</description>
+        <role-name>securityRoleRef1RoleLink</role-name>
+        <principal-name>principal0</principal-name>
+    </security-role>
+    <security-role id="security-role1">
+        <description>The 1 security role</description>
+        <role-name>securityRoleRef2RoleLink</role-name>
+        <principal-name>principal1</principal-name>
+    </security-role>
+</jboss-app>
