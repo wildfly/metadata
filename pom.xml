@@ -11,7 +11,7 @@
     <parent>
         <groupId>org.jboss</groupId>
         <artifactId>jboss-parent</artifactId>
-        <version>48</version>
+        <version>50</version>
     </parent>
 
     <groupId>org.jboss.metadata</groupId>
@@ -19,7 +19,8 @@
     <version>17.0.0-SNAPSHOT</version>
 
     <name>JBoss Application Server: Metadata Aggregator</name>
-    <description>JBoss Application Server: Metadata Aggregator</description>
+    <description>WildFly: Jakarta EE Metadata Aggregator</description>
+    <url>https://github.com/wildfly/metadata</url>
 
     <packaging>pom</packaging>
 
@@ -31,6 +32,22 @@
         </license>
     </licenses>
 
+    <scm>
+        <connection>scm:git:git@github.com:wildfly/metadata.git</connection>
+        <developerConnection>scm:git:git@github.com:wildfly/metadata.git</developerConnection>
+        <url>https://github.com/wildfly/metadata</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>wildfly.org</id>
+            <name>WildFly Community</name>
+            <organization>wildfly.org</organization>
+            <organizationUrl>http://wildfly.org</organizationUrl>
+        </developer>
+    </developers>
+
     <properties>
         <javax.persistence.groupId>org.hibernate.javax.persistence</javax.persistence.groupId>
         <javax.persistence.artifactId>hibernate-jpa-2.1-api</javax.persistence.artifactId>
@@ -38,6 +55,10 @@
 
         <!-- Build configuration -->
         <maven.min.version>3.6.0</maven.min.version>
+
+        <!-- Repository Deployment Settings -->
+        <nexus.repository.staging>wildfly-staging</nexus.repository.staging>
+        <nexus.staging.tag>wildfly-${project.version}</nexus.staging.tag>
 
         <!-- Dependency versions. Please keep alphabetical -->
         <version.org.jboss.logging>3.5.0.Final</version.org.jboss.logging>
@@ -371,12 +392,5 @@
             </dependencies>
         </profile>
     </profiles>
-
-    <scm>
-        <connection>scm:git:git@github.com:jboss/metadata.git</connection>
-        <url>scm:git:git@github.com:jboss/metadata.git</url>
-        <developerConnection>scm:git:git@github.com:jboss/metadata.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
 
 </project>
