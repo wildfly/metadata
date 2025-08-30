@@ -10,11 +10,66 @@
     <parent>
         <groupId>org.jboss</groupId>
         <artifactId>jboss-parent</artifactId>
-        <version>48</version>
+        <version>50</version>
     </parent>
 
     <groupId>org.jboss.metadata</groupId>
     <artifactId>metadata-build-config</artifactId>
-    <name>Metadata Build Configuration</name>
     <version>17.0.0-SNAPSHOT</version>
+
+    <name>Metadata Build Configuration</name>
+    <description>Checkstyle configuration for JBoss Metadata</description>
+    <url>https://github.com/wildfly/metadata</url>
+
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://repository.jboss.org/licenses/apache-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:wildfly/metadata.git</connection>
+        <developerConnection>scm:git:git@github.com:wildfly/metadata.git</developerConnection>
+        <url>https://github.com/wildfly/metadata</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>wildfly.org</id>
+            <name>WildFly Community</name>
+            <organization>wildfly.org</organization>
+            <organizationUrl>http://wildfly.org</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <!-- Repository Deployment Settings -->
+        <nexus.repository.staging>wildfly-staging</nexus.repository.staging>
+        <nexus.staging.tag>jboss-metadata-${project.version}</nexus.staging.tag>
+    </properties>
+
+    <!-- Maven Central requires javadoc jar. Create an empty one. -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>empty-javadoc-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>javadoc</classifier>
+                            <classesDirectory>${project.basedir}/javadoc</classesDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
