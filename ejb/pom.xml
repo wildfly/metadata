@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.jboss.metadata</groupId>
         <artifactId>jboss-as-parent-metadata</artifactId>
-        <version>17.0.0-SNAPSHOT</version>
+        <version>17.0.0.Beta1</version>
     </parent>
 	
     <artifactId>jboss-metadata-ejb</artifactId>

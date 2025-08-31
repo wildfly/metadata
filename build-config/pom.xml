@@ -15,7 +15,7 @@
 
     <groupId>org.jboss.metadata</groupId>
     <artifactId>metadata-build-config</artifactId>
-    <version>17.0.0-SNAPSHOT</version>
+    <version>17.0.0.Beta1</version>
 
     <name>Metadata Build Configuration</name>
     <description>Checkstyle configuration for JBoss Metadata</description>
@@ -33,7 +33,8 @@
         <connection>scm:git:git@github.com:wildfly/metadata.git</connection>
         <developerConnection>scm:git:git@github.com:wildfly/metadata.git</developerConnection>
         <url>https://github.com/wildfly/metadata</url>
-    </scm>
+      <tag>17.0.0.Beta1</tag>
+  </scm>
 
     <developers>
         <developer>
