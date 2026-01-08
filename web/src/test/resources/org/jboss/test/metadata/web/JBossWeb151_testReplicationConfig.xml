@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The JBoss Metadata Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<jboss-web version="15.1" xmlns="urn:jboss:jakartaee:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="urn:jboss:jakartaee:1.0 https://www.jboss.org/j2ee/schema/jboss-web_15_1.xsd">
+
+    <replication-config>
+        <cache-name>testCache</cache-name>
+        <replication-granularity>SESSION</replication-granularity>
+    </replication-config>
+
+</jboss-web>

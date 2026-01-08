@@ -30,6 +30,7 @@ public enum Version implements org.jboss.metadata.parser.util.Version<Version> {
     JBOSS_WEB_14_0(org.jboss.metadata.parser.servlet.Version.SERVLET_4_0, 14, 0),
     JBOSS_WEB_14_1(org.jboss.metadata.parser.servlet.Version.SERVLET_4_0, 14, 1),
     JBOSS_WEB_15_0(org.jboss.metadata.parser.servlet.Version.SERVLET_6_0, 15, 0),
+    JBOSS_WEB_15_1(org.jboss.metadata.parser.servlet.Version.SERVLET_6_1, 15, 1),
     ;
     // The corresponding servlet version
     private final org.jboss.metadata.parser.servlet.Version servletVersion;

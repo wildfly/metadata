@@ -21,8 +21,9 @@ public enum Version implements org.jboss.metadata.parser.util.Version<Version> {
     SERVLET_4_0(4, 0, "http://xmlns.jcp.org/xml/ns/javaee/web-app_%d_%d.xsd"),
     SERVLET_5_0(5, 0),
     SERVLET_6_0(6, 0),
+    SERVLET_6_1(6, 1),
     ;
-    public static final Version LATEST = Version.SERVLET_6_0;
+    public static final Version LATEST = Version.SERVLET_6_1;
     private static final Map<String, Version> VERSIONS = EnumSet.allOf(Version.class).stream().collect(Collectors.toMap(Version::toString, Function.identity()));
     private static final Map<String, Version> SYSTEM_IDS = EnumSet.allOf(Version.class).stream().collect(Collectors.toMap(Version::getSystemId, Function.identity()));
 
