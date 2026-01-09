@@ -16,7 +16,7 @@
 
     <groupId>org.jboss.metadata</groupId>
     <artifactId>jboss-as-parent-metadata</artifactId>
-    <version>17.0.0</version>
+    <version>17.1.0-SNAPSHOT</version>
 
     <name>JBoss Application Server: Metadata Aggregator</name>
     <description>WildFly: Jakarta EE Metadata Aggregator</description>
@@ -36,7 +36,7 @@
         <connection>scm:git:git@github.com:wildfly/metadata.git</connection>
         <developerConnection>scm:git:git@github.com:wildfly/metadata.git</developerConnection>
         <url>https://github.com/wildfly/metadata</url>
-        <tag>17.0.0</tag>
+        <tag>17.0.0.Beta1</tag>
     </scm>
 
     <developers>
