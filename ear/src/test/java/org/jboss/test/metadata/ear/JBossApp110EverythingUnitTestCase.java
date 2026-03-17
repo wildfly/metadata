@@ -1,7 +1,3 @@
-/*
- * Copyright The JBoss Metadata Authors
- * SPDX-License-Identifier: Apache-2.0
- */
 package org.jboss.test.metadata.ear;
 
 import org.jboss.metadata.ear.jboss.JBossAppMetaData;
@@ -21,12 +17,7 @@ import org.jboss.metadata.javaee.spec.SecurityRolesMetaData;
 import org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest;
 import org.junit.Test;
 
-/**
- * Test jboss-app.xml which uses jboss-app_11_0_1.xsd
- *
- * @author Jaikiran Pai
- */
-public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTest {
+public class JBossApp110EverythingUnitTestCase  extends AbstractJavaEEMetaDataTest {
 
     private boolean hasJBossAppOverride = false;
 
