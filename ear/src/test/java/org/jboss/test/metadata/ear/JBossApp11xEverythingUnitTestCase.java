@@ -40,7 +40,7 @@ public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTes
         JBossAppMetaData jbossAppMD = new JBossAppMetaData();
         JBossAppMetaDataMerger.merge(jbossAppMD, null, spec);
         hasJBossAppOverride = false;
-        assertEveryting(jbossAppMD);
+        assertEverything(jbossAppMD);
     }
 
     @Test
@@ -53,14 +53,15 @@ public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTes
         JBossAppMetaData jbossAppMD = new JBossAppMetaData();
         JBossAppMetaDataMerger.merge(jbossAppMD, jbossAppXml, spec);
         hasJBossAppOverride = true;
-        assertEveryting(jbossAppMD);
+        assertEverything(jbossAppMD);
         assertEquals("jboss-app-id", jbossAppMD.getId());
-        assertEveryting(jbossAppMD);
+        assertEverything(jbossAppMD);
     }
 
-    protected void assertEveryting(JBossAppMetaData ear) throws Exception {
+    protected void assertEverything(JBossAppMetaData ear) throws Exception {
         assertSecurityRoles(ear);
         assertLibraryDirectory(ear);
+        assertLimitAppClientModules(ear);
         assertModules(ear);
     }
 
@@ -97,6 +98,14 @@ public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTes
             assertEquals("jboss-app-lib0", ear.getLibraryDirectory());
         } else {
             assertEquals("lib0", ear.getLibraryDirectory());
+        }
+    }
+
+    protected void assertLimitAppClientModules(JBossAppMetaData ear) {
+        if (hasJBossAppOverride) {
+            assertTrue("jboss-app-limit-appclient0", ear.isLimitAppclientModules());
+        } else {
+            assertFalse("limit-appclient0", ear.isLimitAppclientModules());
         }
     }
 

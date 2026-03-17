@@ -19,6 +19,7 @@ public enum Element {
     HAR("har"),
     JMX_NAME("jmx-name"),
     LIBRARY_DIRECTORY("library-directory"),
+    LIMIT_APPCLIENT_MODULES("limit-appclient-modules"),
     LOADER_REPOSITORY("loader-repository"),
     LOADER_REPOSITORY_CONFIG("loader-repository-config"),
     MODULE("module"),

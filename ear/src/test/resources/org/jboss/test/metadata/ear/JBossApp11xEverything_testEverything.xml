@@ -12,6 +12,7 @@
 
     <distinct-name>foo</distinct-name>
     <library-directory>jboss-app-lib0</library-directory>
+    <limit-appclient-modules>true</limit-appclient-modules>
 
     <!-- Add a sar0 module -->
     <module id="sar0">

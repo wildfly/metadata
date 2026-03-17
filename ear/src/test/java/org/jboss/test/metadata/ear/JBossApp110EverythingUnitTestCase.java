@@ -1,3 +1,7 @@
+/*
+ * Copyright The JBoss Metadata Authors
+ * SPDX-License-Identifier: Apache-2.0
+ */
 package org.jboss.test.metadata.ear;
 
 import org.jboss.metadata.ear.jboss.JBossAppMetaData;
