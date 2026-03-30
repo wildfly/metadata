@@ -126,6 +126,10 @@ public class JBossAppMetaDataParser extends EarMetaDataParser {
                         appMetaData.setLibraryDirectory(getElementText(reader, propertyReplacer));
                         break;
                     }
+                    case LIMIT_APPCLIENT_MODULES: {
+                        appMetaData.setLimitAppclientModules(Boolean.parseBoolean(getElementText(reader, propertyReplacer)));
+                        break;
+                    }
                     case LOADER_REPOSITORY: {
                         logger.warn("loader-repository element in jboss-app.xml is deprecated and has been ignored");
                         parseLoaderRepository(reader, propertyReplacer);

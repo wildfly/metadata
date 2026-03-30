@@ -15,7 +15,7 @@ import org.jboss.metadata.ear.spec.EarVersion;
  * @version $Revision: 78586 $
  */
 public class JBossAppMetaData extends EarMetaData {
-    private static final long serialVersionUID = 2;
+    private static final long serialVersionUID = 3;
     /**
      * The default application security domain
      */
@@ -29,6 +29,11 @@ public class JBossAppMetaData extends EarMetaData {
      * Distinct name for this application
      */
     private String distinctName;
+
+    /**
+     * Whether appclient processes should ignore non-"java" modules in this application.
+     */
+    private boolean limitAppclientModules;
 
     public JBossAppMetaData() {
         super(EarVersion.APP_10_0);
@@ -52,6 +57,14 @@ public class JBossAppMetaData extends EarMetaData {
 
     public void setUnauthenticatedPrincipal(String unauthenticatedPrincipal) {
         this.unauthenticatedPrincipal = unauthenticatedPrincipal;
+    }
+
+    public boolean isLimitAppclientModules() {
+        return limitAppclientModules;
+    }
+
+    public void setLimitAppclientModules(boolean limitAppclientModules) {
+        this.limitAppclientModules = limitAppclientModules;
     }
 
     public void setDistinctName(final String distinctName) {

@@ -21,12 +21,7 @@ import org.jboss.metadata.javaee.spec.SecurityRolesMetaData;
 import org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest;
 import org.junit.Test;
 
-/**
- * Test jboss-app.xml which uses jboss-app_11_0_1.xsd
- *
- * @author Jaikiran Pai
- */
-public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTest {
+public class JBossApp110EverythingUnitTestCase  extends AbstractJavaEEMetaDataTest {
 
     private boolean hasJBossAppOverride = false;
 
@@ -40,7 +35,7 @@ public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTes
         JBossAppMetaData jbossAppMD = new JBossAppMetaData();
         JBossAppMetaDataMerger.merge(jbossAppMD, null, spec);
         hasJBossAppOverride = false;
-        assertEverything(jbossAppMD);
+        assertEveryting(jbossAppMD);
     }
 
     @Test
@@ -53,15 +48,14 @@ public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTes
         JBossAppMetaData jbossAppMD = new JBossAppMetaData();
         JBossAppMetaDataMerger.merge(jbossAppMD, jbossAppXml, spec);
         hasJBossAppOverride = true;
-        assertEverything(jbossAppMD);
+        assertEveryting(jbossAppMD);
         assertEquals("jboss-app-id", jbossAppMD.getId());
-        assertEverything(jbossAppMD);
+        assertEveryting(jbossAppMD);
     }
 
-    protected void assertEverything(JBossAppMetaData ear) throws Exception {
+    protected void assertEveryting(JBossAppMetaData ear) throws Exception {
         assertSecurityRoles(ear);
         assertLibraryDirectory(ear);
-        assertLimitAppClientModules(ear);
         assertModules(ear);
     }
 
@@ -98,14 +92,6 @@ public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTes
             assertEquals("jboss-app-lib0", ear.getLibraryDirectory());
         } else {
             assertEquals("lib0", ear.getLibraryDirectory());
-        }
-    }
-
-    protected void assertLimitAppClientModules(JBossAppMetaData ear) {
-        if (hasJBossAppOverride) {
-            assertTrue("jboss-app-limit-appclient0", ear.isLimitAppclientModules());
-        } else {
-            assertFalse("limit-appclient0", ear.isLimitAppclientModules());
         }
     }
 

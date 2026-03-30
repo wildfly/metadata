@@ -60,6 +60,7 @@ public class JBossAppMetaDataMerger {
                 dest.setSecurityDomain(override.getSecurityDomain());
             if (override.getUnauthenticatedPrincipal() != null)
                 dest.setUnauthenticatedPrincipal(override.getUnauthenticatedPrincipal());
+            dest.setLimitAppclientModules(override.isLimitAppclientModules());
         }
 
         if (dest.getModules() == null) {

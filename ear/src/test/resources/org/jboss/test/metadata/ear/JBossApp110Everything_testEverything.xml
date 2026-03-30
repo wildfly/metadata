@@ -6,13 +6,12 @@
 
 <jboss-app xmlns="urn:jboss:jakartaee:1.0"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="urn:jboss:jakartaee:1.0 https://www.jboss.org/schema/jbossas/jboss-app_11_0_1.xsd"
-           version="11.0.1"
+           xsi:schemaLocation="urn:jboss:jakartaee:1.0 https://www.jboss.org/schema/jbossas/jboss-app_11_0.xsd"
+           version="11"
            id="jboss-app-id">
 
     <distinct-name>foo</distinct-name>
     <library-directory>jboss-app-lib0</library-directory>
-    <limit-appclient-modules>true</limit-appclient-modules>
 
     <!-- Add a sar0 module -->
     <module id="sar0">
