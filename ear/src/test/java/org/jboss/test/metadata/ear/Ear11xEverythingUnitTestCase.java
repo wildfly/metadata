@@ -17,7 +17,7 @@ import org.jboss.metadata.ear.spec.WebModuleMetaData;
 import org.jboss.test.metadata.javaee.AbstractJavaEEEverythingTest;
 
 /**
- * Ear10x tests.
+ * Ear11x tests.
  *
  * @author Brian Stansberry
  */

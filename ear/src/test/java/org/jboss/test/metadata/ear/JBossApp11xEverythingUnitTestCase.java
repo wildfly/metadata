@@ -11,6 +11,7 @@ import org.jboss.metadata.ear.parser.jboss.JBossAppMetaDataParser;
 import org.jboss.metadata.ear.parser.spec.EarMetaDataParser;
 import org.jboss.metadata.ear.spec.ConnectorModuleMetaData;
 import org.jboss.metadata.ear.spec.EarMetaData;
+import org.jboss.metadata.ear.spec.EarVersion;
 import org.jboss.metadata.ear.spec.EjbModuleMetaData;
 import org.jboss.metadata.ear.spec.JavaModuleMetaData;
 import org.jboss.metadata.ear.spec.ModuleMetaData;
@@ -23,8 +24,6 @@ import org.junit.Test;
 
 /**
  * Test jboss-app.xml which uses jboss-app_11_0_1.xsd
- *
- * @author Jaikiran Pai
  */
 public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTest {
 
@@ -40,6 +39,7 @@ public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTes
         JBossAppMetaData jbossAppMD = new JBossAppMetaData();
         JBossAppMetaDataMerger.merge(jbossAppMD, null, spec);
         hasJBossAppOverride = false;
+        assertEquals(EarVersion.APP_11_0, jbossAppMD.getEarVersion());
         assertEverything(jbossAppMD);
     }
 
@@ -49,11 +49,13 @@ public class JBossApp11xEverythingUnitTestCase extends AbstractJavaEEMetaDataTes
         //enableTrace("org.jboss.xb");
         EarMetaData spec = EarMetaDataParser.INSTANCE.parse(getReader("Ear11xEverything_testEverything.xml"));
         JBossAppMetaData jbossAppXml = unmarshal();
+        assertEquals(EarVersion.APP_11_0, jbossAppXml.getEarVersion());
         assertEquals("Unexpected distinct-name", "foo", jbossAppXml.getDistinctName());
         JBossAppMetaData jbossAppMD = new JBossAppMetaData();
         JBossAppMetaDataMerger.merge(jbossAppMD, jbossAppXml, spec);
         hasJBossAppOverride = true;
         assertEverything(jbossAppMD);
+        assertEquals(EarVersion.APP_11_0, jbossAppMD.getEarVersion());
         assertEquals("jboss-app-id", jbossAppMD.getId());
         assertEverything(jbossAppMD);
     }

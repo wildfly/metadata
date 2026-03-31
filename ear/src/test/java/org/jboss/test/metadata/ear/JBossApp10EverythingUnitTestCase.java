@@ -27,7 +27,7 @@ import org.junit.Test;
 /**
  * Test jboss-app.xml which uses jboss-app_11_0.xsd
  */
-public class JBossApp110EverythingUnitTestCase  extends AbstractJavaEEMetaDataTest {
+public class JBossApp10EverythingUnitTestCase  extends AbstractJavaEEMetaDataTest {
 
     private boolean hasJBossAppOverride = false;
 
@@ -37,10 +37,10 @@ public class JBossApp110EverythingUnitTestCase  extends AbstractJavaEEMetaDataTe
 
     @Test
     public void testOverride() throws Exception {
-        EarMetaData spec = EarMetaDataParser.INSTANCE.parse(getReader("Ear11xEverything_testEverything.xml"));
-        JBossAppMetaData jbossAppMD = new JBossAppMetaData();
+        EarMetaData spec = EarMetaDataParser.INSTANCE.parse(getReader("Ear10xEverything_testEverything.xml"));
+        JBossAppMetaData jbossAppMD = new JBossAppMetaData(EarVersion.APP_10_0);
         JBossAppMetaDataMerger.merge(jbossAppMD, null, spec);
-        assertEquals(EarVersion.APP_11_0, jbossAppMD.getEarVersion());
+        assertEquals(EarVersion.APP_10_0, jbossAppMD.getEarVersion());
         hasJBossAppOverride = false;
         assertEveryting(jbossAppMD);
     }
@@ -49,14 +49,13 @@ public class JBossApp110EverythingUnitTestCase  extends AbstractJavaEEMetaDataTe
     public void testEverything()
             throws Exception {
         //enableTrace("org.jboss.xb");
-        EarMetaData spec = EarMetaDataParser.INSTANCE.parse(getReader("Ear11xEverything_testEverything.xml"));
+        EarMetaData spec = EarMetaDataParser.INSTANCE.parse(getReader("Ear10xEverything_testEverything.xml"));
         JBossAppMetaData jbossAppXml = unmarshal();
-        assertEquals(EarVersion.APP_11_0, jbossAppXml.getEarVersion());
         assertEquals("Unexpected distinct-name", "foo", jbossAppXml.getDistinctName());
-        JBossAppMetaData jbossAppMD = new JBossAppMetaData();
+        JBossAppMetaData jbossAppMD = new JBossAppMetaData(EarVersion.APP_10_0);
         JBossAppMetaDataMerger.merge(jbossAppMD, jbossAppXml, spec);
         hasJBossAppOverride = true;
-        assertEquals(EarVersion.APP_11_0, jbossAppMD.getEarVersion());
+        assertEquals(EarVersion.APP_10_0, jbossAppMD.getEarVersion());
         assertEveryting(jbossAppMD);
         assertEquals("jboss-app-id", jbossAppMD.getId());
         assertEveryting(jbossAppMD);
