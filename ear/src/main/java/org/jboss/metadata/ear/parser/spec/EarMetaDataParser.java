@@ -22,11 +22,14 @@ import org.jboss.metadata.parser.ee.SecurityRoleMetaDataParser;
 import org.jboss.metadata.parser.util.MetaDataElementParser;
 import org.jboss.metadata.property.PropertyReplacer;
 import org.jboss.metadata.property.PropertyReplacers;
+import org.jboss.logging.Logger;
 
 /**
  * @author John Bailey
  */
 public class EarMetaDataParser extends MetaDataElementParser {
+
+    private static final Logger logger = Logger.getLogger(EarMetaDataParser.class);
 
     public static final EarMetaDataParser INSTANCE = new EarMetaDataParser();
 
@@ -65,20 +68,37 @@ public class EarMetaDataParser extends MetaDataElementParser {
                     versionString = reader.getAttributeValue(i);
                 }
             }
-            if ("1.4".equals(versionString)) {
-                version = EarVersion.APP_1_4;
-            } else if ("5".equals(versionString)) {
-                version = EarVersion.APP_5_0;
-            } else if ("6".equals(versionString)) {
-                version = EarVersion.APP_6_0;
-            } else if ("7".equals(versionString)) {
-                version = EarVersion.APP_7_0;
-            } else if ("8".equals(versionString)) {
-                version = EarVersion.APP_8_0;
-            } else if ("9".equals(versionString)) {
-                version = EarVersion.APP_9_0;
-            } else if ("10".equals(versionString)) {
-                version = EarVersion.APP_10_0;
+            // Parse version string if present
+            if (versionString != null) {
+                switch (versionString) {
+                    case "1.4":
+                        version = EarVersion.APP_1_4;
+                        break;
+                    case "5":
+                        version = EarVersion.APP_5_0;
+                        break;
+                    case "6":
+                        version = EarVersion.APP_6_0;
+                        break;
+                    case "7":
+                        version = EarVersion.APP_7_0;
+                        break;
+                    case "8":
+                        version = EarVersion.APP_8_0;
+                        break;
+                    case "9":
+                        version = EarVersion.APP_9_0;
+                        break;
+                    case "10":
+                        version = EarVersion.APP_10_0;
+                        break;
+                    case "11":
+                        version = EarVersion.APP_11_0;
+                        break;
+                    default:
+                        logger.warnf("Unsupported or unknown EAR version '%s' specified in descriptor. Defaulting to version 6.0", versionString);
+                        break;
+                }
             }
         }
 

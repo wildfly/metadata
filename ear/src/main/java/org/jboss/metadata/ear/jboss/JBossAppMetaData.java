@@ -35,8 +35,14 @@ public class JBossAppMetaData extends EarMetaData {
      */
     private boolean limitAppclientModules;
 
+    /**
+     * Creates a new JBossAppMetaData with the default EAR version.
+     * <p>
+     * If you need a specific version, use {@link #JBossAppMetaData(EarVersion)} constructor instead.
+     * </p>
+     */
     public JBossAppMetaData() {
-        super(EarVersion.APP_10_0);
+        super(EarVersion.APP_11_0);
     }
 
     public JBossAppMetaData(EarVersion earVersion) {

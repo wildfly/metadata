@@ -28,7 +28,6 @@ public class JBossAppMetaDataMerger {
         } else {
             dest.setEarEnvironmentRefsGroup(new EarEnvironmentRefsGroupMetaData());
         }
-
         if (original != null) {
             dest.setInitializeInOrder(original.getInitializeInOrder());
         }
@@ -56,10 +55,12 @@ public class JBossAppMetaDataMerger {
         }
 
         if (override != null) {
-            if (override.getSecurityDomain() != null)
+            if (override.getSecurityDomain() != null) {
                 dest.setSecurityDomain(override.getSecurityDomain());
-            if (override.getUnauthenticatedPrincipal() != null)
+            }
+            if (override.getUnauthenticatedPrincipal() != null) {
                 dest.setUnauthenticatedPrincipal(override.getUnauthenticatedPrincipal());
+            }
             dest.setLimitAppclientModules(override.isLimitAppclientModules());
         }
 
@@ -69,20 +70,25 @@ public class JBossAppMetaDataMerger {
 
         ModulesMetaData overrideModules = null;
         ModulesMetaData originalModules = null;
-        if (override != null)
+        if (override != null) {
             overrideModules = override.getModules();
-        if (original != null)
+        }
+        if (original != null) {
             originalModules = original.getModules();
+        }
         ModulesMetaDataMerger.merge(dest.getModules(), overrideModules, originalModules);
 
         SecurityRolesMetaData securityRolesMetaData = null;
         SecurityRolesMetaData overrideSecurityRolesMetaData = null;
-        if (original != null)
+        if (original != null) {
             securityRolesMetaData = original.getSecurityRoles();
-        if (override != null)
+        }
+        if (override != null) {
             overrideSecurityRolesMetaData = override.getSecurityRoles();
-        if (dest.getSecurityRoles() == null)
+        }
+        if (dest.getSecurityRoles() == null) {
             dest.setSecurityRoles(new SecurityRolesMetaData());
+        }
         SecurityRolesMetaDataMerger.merge(dest.getSecurityRoles(), overrideSecurityRolesMetaData, securityRolesMetaData);
     }
 }
